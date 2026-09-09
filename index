@@ -14,19 +14,19 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Previa Treinamentos - Portal de Ensino Prático">
   <meta property="og:description" content="Acesse nossa plataforma de ensino e agendamento de aulas.">
-  <meta property="og:image" content="https://lh3.googleusercontent.com/pw/AP1GczOHQW3vNgak5n6o5ao_2xrU1jg939u8uya5WNvo9AcA8vATPtKCFkZ7yag8Z53i0T4y14Z4_kgtCSydvki-SqzzprLY09tnJTxG2tdbAgqJjv3fHNffJnHp2aRdyszqR6eMSL3iVpDPIQGRCrOoSp3y=w599-h599-s-no-gm?authuser=0">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/pw/AP1GczNDEUMRtWrusdox_5RpkkJARUcLgcx_VIvGsty5dkQmE479LYBQBM6dvhLaxsIFs_tCwspiYgYeJyJPGaUUwzNOctBwDF5VW1HlX0ywGFECf6bXx154LunZ_Kal4Y_lfLSKOCkkxsxRPt9JWWMvwM7z=w875-h779-s-no-gm?authuser=0">
   <meta property="og:url" content="https://previatreinamentos.github.io/agendamento/">
 
   <!-- Meta tags adicionais para redes sociais -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Previa Treinamentos - Portal de Ensino Prático">
-  <meta name="twitter:image" content="https://lh3.googleusercontent.com/pw/AP1GczOHQW3vNgak5n6o5ao_2xrU1jg939u8uya5WNvo9AcA8vATPtKCFkZ7yag8Z53i0T4y14Z4_kgtCSydvki-SqzzprLY09tnJTxG2tdbAgqJjv3fHNffJnHp2aRdyszqR6eMSL3iVpDPIQGRCrOoSp3y=w599-h599-s-no-gm?authuser=0">
+  <meta name="twitter:image" content="https://lh.googleusercontent.com/pw/AP1GczOHQW3vNgak5n6o5ao_2xrU1jg939u8uya5WNvo9AcA8vATPtKCFkZ7yag8Z53i0T4y14Z4_kgtCSydvki-SqzzprLY09tnJTxG2tdbAgqJjv3fHNffJnHp2aRdyszqR6eMSL3iVpDPIQGRCrOoSp3y=w599-h599-s-no-gm?authuser=0">
 
   <!-- 1. Ícone padrão para navegadores (Favicon) -->
-  <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/pw/AP1GczOHQW3vNgak5n6o5ao_2xrU1jg939u8uya5WNvo9AcA8vATPtKCFkZ7yag8Z53i0T4y14Z4_kgtCSydvki-SqzzprLY09tnJTxG2tdbAgqJjv3fHNffJnHp2aRdyszqR6eMSL3iVpDPIQGRCrOoSp3y=w599-h599-s-no-gm?authuser=0">
+  <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/pw/AP1GczNDEUMRtWrusdox_5RpkkJARUcLgcx_VIvGsty5dkQmE479LYBQBM6dvhLaxsIFs_tCwspiYgYeJyJPGaUUwzNOctBwDF5VW1HlX0ywGFECf6bXx154LunZ_Kal4Y_lfLSKOCkkxsxRPt9JWWMvwM7z=w875-h779-s-no-gm?authuser=0">
 
   <!-- 2. Ícone para iOS (iPhone / iPad - Tela Inicial) -->
-  <link rel="apple-touch-icon" sizes="180x180" href="https://lh3.googleusercontent.com/pw/AP1GczOHQW3vNgak5n6o5ao_2xrU1jg939u8uya5WNvo9AcA8vATPtKCFkZ7yag8Z53i0T4y14Z4_kgtCSydvki-SqzzprLY09tnJTxG2tdbAgqJjv3fHNffJnHp2aRdyszqR6eMSL3iVpDPIQGRCrOoSp3y=w599-h599-s-no-gm?authuser=0">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://lh3.googleusercontent.com/pw/AP1GczNDEUMRtWrusdox_5RpkkJARUcLgcx_VIvGsty5dkQmE479LYBQBM6dvhLaxsIFs_tCwspiYgYeJyJPGaUUwzNOctBwDF5VW1HlX0ywGFECf6bXx154LunZ_Kal4Y_lfLSKOCkkxsxRPt9JWWMvwM7z=w875-h779-s-no-gm?authuser=0">
 
   <!-- Meta tags específicas do iOS para PWA -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -44,13 +44,13 @@
       "theme_color": "#042e2a",
       "icons": [
         {
-          "src": "https://lh3.googleusercontent.com/pw/AP1GczOHQW3vNgak5n6o5ao_2xrU1jg939u8uya5WNvo9AcA8vATPtKCFkZ7yag8Z53i0T4y14Z4_kgtCSydvki-SqzzprLY09tnJTxG2tdbAgqJjv3fHNffJnHp2aRdyszqR6eMSL3iVpDPIQGRCrOoSp3y=w599-h599-s-no-gm?authuser=0",
+          "src": "https://lh3.googleusercontent.com/pw/AP1GczNDEUMRtWrusdox_5RpkkJARUcLgcx_VIvGsty5dkQmE479LYBQBM6dvhLaxsIFs_tCwspiYgYeJyJPGaUUwzNOctBwDF5VW1HlX0ywGFECf6bXx154LunZ_Kal4Y_lfLSKOCkkxsxRPt9JWWMvwM7z=w875-h779-s-no-gm?authuser=0",
           "sizes": "192x192",
           "type": "image/png",
           "purpose": "any maskable"
         },
         {
-          "src": "https://lh3.googleusercontent.com/pw/AP1GczOHQW3vNgak5n6o5ao_2xrU1jg939u8uya5WNvo9AcA8vATPtKCFkZ7yag8Z53i0T4y14Z4_kgtCSydvki-SqzzprLY09tnJTxG2tdbAgqJjv3fHNffJnHp2aRdyszqR6eMSL3iVpDPIQGRCrOoSp3y=w599-h599-s-no-gm?authuser=0",
+          "src": "https://lh3.googleusercontent.com/pw/AP1GczNDEUMRtWrusdox_5RpkkJARUcLgcx_VIvGsty5dkQmE479LYBQBM6dvhLaxsIFs_tCwspiYgYeJyJPGaUUwzNOctBwDF5VW1HlX0ywGFECf6bXx154LunZ_Kal4Y_lfLSKOCkkxsxRPt9JWWMvwM7z=w875-h779-s-no-gm?authuser=0",
           "sizes": "512x512",
           "type": "image/png",
           "purpose": "any maskable"
