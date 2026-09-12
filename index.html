@@ -4,6 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CFCda LU - Portal de Ensino Prático</title>
+
+  <!-- PWA E META TAGS DE APLICATIVO -->
+  <meta name="theme-color" content="#003732">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="CFCda LU">
+
+  <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/pw/AP1GczOLPn4Uwp7ko7yCP_gUp-IygFVg00Zf9rjU-1JjfX5sz4s_AHi6p85OH73OoWuwApraCzl5r9V8eIdqZvaa2qj3_d3nKtwfVhABnsCEDOQhMe8WVVUg_ia5go-orwzzHJN3c6W60l1ns3_AWgJcyiuA=w875-h779-s-no-gm?authuser=0">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://lh3.googleusercontent.com/pw/AP1GczOLPn4Uwp7ko7yCP_gUp-IygFVg00Zf9rjU-1JjfX5sz4s_AHi6p85OH73OoWuwApraCzl5r9V8eIdqZvaa2qj3_d3nKtwfVhABnsCEDOQhMe8WVVUg_ia5go-orwzzHJN3c6W60l1ns3_AWgJcyiuA=w875-h779-s-no-gm?authuser=0">
+
+  <script>
+    const myManifest = {
+      "name": "CFCda LU Treinamentos",
+      "short_name": "CFCda LU",
+      "start_url": "./",
+      "display": "standalone",
+      "background_color": "#008d82",
+      "theme_color": "#003732",
+      "icons": [
+        { "src": "https://lh3.googleusercontent.com/pw/AP1GczOLPn4Uwp7ko7yCP_gUp-IygFVg00Zf9rjU-1JjfX5sz4s_AHi6p85OH73OoWuwApraCzl5r9V8eIdqZvaa2qj3_d3nKtwfVhABnsCEDOQhMe8WVVUg_ia5go-orwzzHJN3c6W60l1ns3_AWgJcyiuA=w875-h779-s-no-gm?authuser=0", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+        { "src": "https://lh3.googleusercontent.com/pw/AP1GczOLPn4Uwp7ko7yCP_gUp-IygFVg00Zf9rjU-1JjfX5sz4s_AHi6p85OH73OoWuwApraCzl5r9V8eIdqZvaa2qj3_d3nKtwfVhABnsCEDOQhMe8WVVUg_ia5go-orwzzHJN3c6W60l1ns3_AWgJcyiuA=w875-h779-s-no-gm?authuser=0", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+      ]
+    };
+    const stringManifest = JSON.stringify(myManifest);
+    const blob = new Blob([stringManifest], {type: 'application/json'});
+    const linkElem = document.createElement('link');
+    linkElem.rel = 'manifest';
+    linkElem.href = URL.createObjectURL(blob);
+    document.head.appendChild(linkElem);
+  </script>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -35,6 +66,7 @@
     .cal-day-cell.livre { background: #ecfdf5; color: #059669; border-color: #a7f3d0; }
     .cal-day-cell.ocupado { background: #ffedd5; color: #ea580c; border-color: #fed7aa; }
     .cal-day-cell.selecionado { outline: 2.5px solid var(--btn-color); font-weight: 800; transform: scale(1.04); }
+    .install-banner { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 400px; background-color: #000; color: #fff; border-radius: 14px; padding: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); z-index: 99999; display: none; flex-direction: column; align-items: center; text-align: center; }
   </style>
 </head>
 <body>
@@ -66,6 +98,12 @@
         </div>
         <button type="submit" id="btnEntrar" class="w-full h-12 rounded-xl text-sm font-bold text-white shadow-lg mt-2 flex items-center justify-center gap-2" style="background-color: var(--btn-color);">
           <span>Acessar o Painel</span>
+        </button>
+
+        <!-- BOTÃO VISÍVEL PARA INSTALAR O APP -->
+        <button type="button" onclick="dispararInstalacaoApp()" class="w-full mt-3 py-2.5 rounded-xl border border-emerald-500/40 text-emerald-400 bg-emerald-950/40 hover:bg-emerald-900/50 text-xs font-bold flex items-center justify-center gap-2 transition">
+          <i data-lucide="smartphone" class="w-4 h-4"></i>
+          <span>📲 Instalar Aplicativo (Web App)</span>
         </button>
       </form>
     </div>
@@ -127,18 +165,23 @@
         </nav>
       </div>
 
-      <button type="button" onclick="fazerLogout()" class="w-full flex items-center gap-3 px-4 py-3 text-xs font-bold text-rose-400 hover:bg-rose-500/10 rounded-xl transition">
-        <i data-lucide="log-out" class="w-4 h-4 flex-shrink-0"></i>
-        <span class="hide-collapsed">Sair do Sistema</span>
-      </button>
+      <div class="space-y-2">
+        <button type="button" onclick="dispararInstalacaoApp()" class="w-full flex items-center gap-3 px-4 py-2.5 text-xs font-bold text-emerald-400 bg-emerald-950/40 hover:bg-emerald-900/50 rounded-xl transition border border-emerald-500/20">
+          <i data-lucide="download" class="w-4 h-4 flex-shrink-0"></i>
+          <span class="hide-collapsed">Instalar App</span>
+        </button>
+        <button type="button" onclick="fazerLogout()" class="w-full flex items-center gap-3 px-4 py-3 text-xs font-bold text-rose-400 hover:bg-rose-500/10 rounded-xl transition">
+          <i data-lucide="log-out" class="w-4 h-4 flex-shrink-0"></i>
+          <span class="hide-collapsed">Sair do Sistema</span>
+        </button>
+      </div>
     </aside>
 
     <!-- CONTEÚDO PRINCIPAL -->
     <main class="flex-1 flex flex-col min-w-0 bg-slate-50 overflow-y-auto">
       <header class="bg-white border-b border-slate-200 py-3.5 px-8 flex justify-between items-center sticky top-0 z-30">
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-3">
           <h2 id="topoTituloSecao" class="text-base font-extrabold text-slate-900 uppercase">RELATÓRIO GERAL</h2>
-          <!-- BOTÃO GERAL DE ATUALIZAR DADOS -->
           <button type="button" onclick="atualizarDadosGerais()" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 border border-slate-300 rounded-xl text-xs font-bold text-slate-700 flex items-center gap-1.5 transition">
             <i data-lucide="rotate-cw" class="w-3.5 h-3.5 text-teal-700"></i> Atualizar Dados
           </button>
@@ -203,7 +246,7 @@
           </div>
         </section>
 
-        <!-- 2. ABA AGENDAR AULA (ALUNO COM CALENDÁRIO) -->
+        <!-- 2. ABA AGENDAR AULA -->
         <section id="aba_agendar" class="hidden space-y-6">
           <div class="cal-card shadow-sm space-y-4">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b pb-3">
@@ -285,21 +328,17 @@
           </div>
         </section>
 
-        <!-- 4. ABA CURSOS & AULAS EAD DO ALUNO (IMAGEM 1 E 4) -->
+        <!-- 4. ABA CURSOS & AULAS EAD DO ALUNO -->
         <section id="aba_ead" class="hidden space-y-6">
-          <div class="flex justify-between items-center">
-            <div>
-              <h3 class="text-base font-extrabold text-slate-900 uppercase tracking-wide">Cursos & Aulas EAD Matriculados</h3>
-              <p class="text-xs text-slate-500 mt-1">Materiais teóricos e aulas virtuais atribuídas ao seu cadastro.</p>
-            </div>
+          <div>
+            <h3 class="text-base font-extrabold text-slate-900 uppercase tracking-wide">Cursos & Aulas EAD Matriculados</h3>
+            <p class="text-xs text-slate-500 mt-1">Materiais teóricos e aulas virtuais atribuídas ao seu cadastro.</p>
           </div>
 
-          <!-- Cards dos Cursos -->
           <div id="gridCursosEADCards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="col-span-full p-8 text-center text-slate-400">Carregando cursos matriculados...</div>
           </div>
 
-          <!-- Player do Curso -->
           <div id="boxPlayerCursoEAD" class="hidden space-y-4 bg-white p-6 rounded-3xl border border-slate-200 shadow-sm">
             <div class="flex justify-between items-center border-b pb-3">
               <h4 id="tituloPlayerCurso" class="text-sm font-extrabold text-slate-900">Aula em Andamento</h4>
@@ -423,7 +462,6 @@
             <div class="col-span-full p-8 text-center text-slate-400">Carregando ferramentas educacionais...</div>
           </div>
 
-          <!-- ESPAÇO INCORPORADO EXCLUSIVO (IMAGEM 3) -->
           <div id="boxPlayerFerramenta" class="hidden space-y-4 bg-white p-6 rounded-3xl border border-slate-200 shadow-sm">
             <div class="flex justify-between items-center border-b pb-3">
               <h4 id="tituloPlayerFerramenta" class="text-sm font-extrabold text-slate-900">Visualização de Conteúdo</h4>
@@ -439,8 +477,16 @@
     </main>
   </div>
 
-  <!-- ================= MODAIS ================= -->
-  <!-- Modal Saiba Mais -->
+  <!-- BANNER FLUTUANTE DE INSTALAÇÃO DO PWA -->
+  <div id="pwaBanner" class="install-banner">
+    <p class="text-sm font-semibold mb-3">Deseja instalar o aplicativo oficial para acesso rápido?</p>
+    <div class="flex gap-3 w-full justify-center">
+      <button id="btnInstall" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 px-4 py-2 rounded-xl text-xs font-bold">Instalar Aplicativo</button>
+      <button id="btnDismiss" class="text-slate-400 hover:text-white text-xs">Agora não</button>
+    </div>
+  </div>
+
+  <!-- MODAIS RESTANTES -->
   <div id="modalSaibaMaisInstrutor" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-200 p-4">
     <div class="bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 relative transform scale-95 transition-transform duration-200 max-h-[90vh] overflow-y-auto">
       <button type="button" onclick="fecharModalSaibaMais()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-600 p-1.5 rounded-lg"><i data-lucide="x" class="w-5 h-5"></i></button>
@@ -463,7 +509,6 @@
     </div>
   </div>
 
-  <!-- Modal Liberar Horário -->
   <div id="modalLiberarHorario" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-200 p-4">
     <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full p-6 relative transform scale-95 transition-transform duration-200 max-h-[90vh] overflow-y-auto">
       <div class="flex justify-between items-center border-b pb-3 mb-4">
@@ -510,7 +555,6 @@
     </div>
   </div>
 
-  <!-- Modal Confirmar Agendamento -->
   <div id="modalConfirmarAgendamento" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-200 p-4">
     <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full p-6 relative transform scale-95 transition-transform duration-200 space-y-4">
       <div class="flex justify-between items-center border-b pb-3">
@@ -528,7 +572,6 @@
     </div>
   </div>
 
-  <!-- Modal Ver Ficha de Avaliação -->
   <div id="modalFichaAvaliacao" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-200 p-4">
     <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative transform scale-95 transition-transform duration-200 max-h-[90vh] overflow-y-auto flex flex-col space-y-6">
       <div class="flex justify-between items-start border-b pb-4">
@@ -541,7 +584,6 @@
         </div>
         <button type="button" onclick="fecharModalFicha()" class="text-slate-400 hover:text-slate-600 p-1.5"><i data-lucide="x" class="w-5 h-5"></i></button>
       </div>
-
       <div class="overflow-x-auto border border-slate-200 rounded-2xl">
         <table class="w-full text-left text-xs border-collapse">
           <thead>
@@ -557,7 +599,6 @@
           <tbody id="fichaCorpoPedagogico" class="divide-y divide-slate-100"></tbody>
         </table>
       </div>
-
       <div class="space-y-2">
         <h4 class="text-xs font-black text-slate-900 uppercase">Avaliação Comportamental</h4>
         <div class="overflow-x-auto border border-slate-200 rounded-2xl">
@@ -573,7 +614,6 @@
           </table>
         </div>
       </div>
-
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2 border-t">
         <div>
           <span class="text-[10px] font-black text-slate-400 uppercase tracking-wider block">NOTA FINAL DA AULA</span>
@@ -584,7 +624,6 @@
           <p id="fichaFeedbackInstrutor" class="text-xs text-slate-600 italic bg-slate-50 p-4 rounded-xl border border-slate-100 mt-1 leading-relaxed">--</p>
         </div>
       </div>
-
       <div class="flex justify-between items-center pt-2">
         <button type="button" id="btnCompartilharFichaPdf" class="px-4 py-2.5 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200 rounded-xl text-xs font-bold flex items-center gap-2">
           <i data-lucide="share-2" class="w-4 h-4"></i> Compartilhar no WhatsApp
@@ -594,7 +633,6 @@
     </div>
   </div>
 
-  <!-- Modal Avaliar Aula (INSTRUTOR COM CAMPOS OBRIGATÓRIOS E EM BRANCO) -->
   <div id="modalAvaliarAula" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-200 p-4">
     <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative transform scale-95 transition-transform duration-200 max-h-[90vh] overflow-y-auto flex flex-col space-y-6">
       <div class="flex justify-between items-start border-b pb-4">
@@ -604,10 +642,8 @@
         </div>
         <button type="button" onclick="fecharModalAvaliar()" class="text-slate-400 hover:text-slate-600 p-1.5"><i data-lucide="x" class="w-5 h-5"></i></button>
       </div>
-
       <form id="formAvaliarPratica" onsubmit="enviarAvaliacaoPratica(event)" class="space-y-6">
         <input type="hidden" id="avLinhaId">
-
         <div class="overflow-x-auto border border-slate-200 rounded-2xl">
           <table class="w-full text-left text-xs border-collapse">
             <thead>
@@ -623,7 +659,6 @@
             <tbody id="avCorpoPedagogico" class="divide-y divide-slate-200"></tbody>
           </table>
         </div>
-
         <div class="space-y-2">
           <h4 class="text-xs font-black text-slate-900 uppercase">Avaliação Comportamental</h4>
           <div class="overflow-x-auto border border-slate-200 rounded-2xl">
@@ -639,7 +674,6 @@
             </table>
           </div>
         </div>
-
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2 border-t">
           <div>
             <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nota Final (0 a 10) *</label>
@@ -650,7 +684,6 @@
             <textarea id="avFeedbackTexto" required rows="2" class="w-full p-3 border border-slate-300 rounded-xl text-xs font-semibold outline-none" placeholder="Digite obrigatoriamente as observações do aluno na aula..."></textarea>
           </div>
         </div>
-
         <div class="flex justify-end gap-3 pt-4 border-t">
           <button type="button" onclick="fecharModalAvaliar()" class="px-4 py-2 text-xs font-bold text-slate-500 hover:bg-slate-50 rounded-xl">Cancelar</button>
           <button type="submit" id="btnSalvarAvaliacao" class="px-6 py-2.5 text-white text-xs font-bold rounded-xl shadow-lg" style="background-color: var(--btn-color);">Concluir e Registrar Aula</button>
@@ -670,6 +703,7 @@
     let diasLivresAluno = [];
     let diasOcupadosAluno = [];
     let vagaSelecionadaAluno = null;
+    let deferredPrompt = null;
 
     const ITENS_COMPORTAMENTAIS_PADRAO = [
       "Ansioso",
@@ -678,6 +712,49 @@
       "Condução defensiva",
       "Segue as orientações do instrutor"
     ];
+
+    // ================= REGISTRO SERVICE WORKER E PWA =================
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        const swCode = `
+          self.addEventListener('install', (e) => self.skipWaiting());
+          self.addEventListener('activate', (e) => e.waitUntil(self.clients.claim()));
+          self.addEventListener('fetch', (e) => e.respondWith(fetch(e.request).catch(() => new Response('Offline'))));
+        `;
+        const blob = new Blob([swCode], { type: 'application/javascript' });
+        navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(console.warn);
+      });
+    }
+
+    const bannerPwa = document.getElementById('pwaBanner');
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      if (!isStandalone) bannerPwa.style.display = 'flex';
+    });
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        if (!isStandalone && bannerPwa) bannerPwa.style.display = 'flex';
+      }, 1500);
+    });
+
+    document.getElementById('btnInstall')?.addEventListener('click', () => dispararInstalacaoApp());
+    document.getElementById('btnDismiss')?.addEventListener('click', () => { if (bannerPwa) bannerPwa.style.display = 'none'; });
+
+    function dispararInstalacaoApp() {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then(() => {
+          deferredPrompt = null;
+          if (bannerPwa) bannerPwa.style.display = 'none';
+        });
+      } else {
+        alert("Para instalar este Web App no seu aparelho:\n\n📱 No Android / Chrome: Toque nos 3 pontinhos do topo e selecione 'Instalar aplicativo' ou 'Adicionar à tela inicial'.\n\n🍏 No iPhone / Safari: Toque no ícone de Compartilhar (quadrado com seta) e escolha 'Adicionar à Tela de Início'.");
+      }
+    }
 
     function trocarPerfilLogin(perfil) {
       perfilAtual = perfil;
@@ -809,7 +886,6 @@
       lucide.createIcons();
     }
 
-    // BOTÃO MESTRE DE ATUALIZAÇÃO GERAL EM TODAS AS TELAS
     function atualizarDadosGerais() {
       if (abaAtivaAtual === 'agenda_inst') carregarAgendaInstrutor(true);
       else if (abaAtivaAtual === 'agendar') carregarVagasAluno(true);
@@ -1247,7 +1323,7 @@
       }
     }
 
-    // ================= CURSOS & AULAS EAD (IMAGENS 1 E 4) =================
+    // ================= CURSOS & AULAS EAD DO ALUNO =================
     async function carregarCursosEAD() {
       const grid = document.getElementById('gridCursosEADCards');
       grid.innerHTML = '<div class="col-span-full p-8 text-center text-slate-400">Buscando cursos matriculados...</div>';
@@ -1305,7 +1381,7 @@
       document.getElementById('gridCursosEADCards').classList.remove('hidden');
     }
 
-    // ================= MODAL DE VISUALIZAÇÃO DE FICHA (IMAGEM 6) =================
+    // ================= MODAL DE VISUALIZAÇÃO DE FICHA =================
     async function visualizarFichaAula(aulaEncoded) {
       const h = JSON.parse(decodeURIComponent(aulaEncoded));
       document.getElementById('fichaSubtitulo').innerText = `Aula: ${h.titulo} • Data: ${h.data}`;
@@ -1367,7 +1443,7 @@
       setTimeout(() => m.classList.add('hidden'), 200);
     }
 
-    // ================= MODAL AVALIAR AULA PELO INSTRUTOR (CAMPOS LIMPOS E OBRIGATÓRIOS) =================
+    // ================= MODAL AVALIAR AULA PELO INSTRUTOR =================
     async function abrirModalAvaliarAula(aulaEncoded) {
       const a = JSON.parse(decodeURIComponent(aulaEncoded));
       document.getElementById('avLinhaId').value = a.linha;
@@ -1391,7 +1467,6 @@
 
         questoes.forEach(q => {
           const tr = document.createElement('tr');
-          // NENHUM RADIO BUTTON VEM MARCADO (CHECKED REMOVIDO) - OBRIGATÓRIO PREENCHER
           tr.innerHTML = `
             <td class="p-3 font-semibold text-slate-700 border-r border-slate-200">Critério</td>
             <td class="p-3 text-slate-800 border-r border-slate-200">${q.descricao}</td>
@@ -1515,7 +1590,7 @@
       }
     }
 
-    // ================= FERRAMENTAS EDUCACIONAIS (IMAGENS 2 E 3) =================
+    // ================= FERRAMENTAS EDUCACIONAIS =================
     async function carregarFerramentas() {
       const grid = document.getElementById('gridFerramentasCards');
       grid.innerHTML = '<div class="col-span-full p-8 text-center text-slate-400">Buscando ferramentas da planilha...</div>';
@@ -1546,7 +1621,7 @@
             </div>
             <div class="p-5 pt-0">
               <button type="button" onclick="abrirPlayerFerramenta('${encodeURIComponent(JSON.stringify(f))}')" class="w-full py-2.5 rounded-xl text-white font-bold text-xs shadow-md transition flex items-center justify-center gap-2" style="background-color: var(--btn-color);">
-                <i data-lucide="play" class="w-4 h-4"></i>
+                <i data-lucide="external-link" class="w-4 h-4"></i>
                 <span>Abrir Ferramenta</span>
               </button>
             </div>
@@ -1660,7 +1735,9 @@
       location.reload();
     }
 
-    window.onload = () => lucide.createIcons();
+    window.onload = () => {
+      lucide.createIcons();
+    };
   </script>
 </body>
 </html>
