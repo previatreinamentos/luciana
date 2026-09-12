@@ -166,10 +166,6 @@
       </div>
 
       <div class="space-y-2">
-        <button type="button" onclick="dispararInstalacaoApp()" class="w-full flex items-center gap-3 px-4 py-2.5 text-xs font-bold text-emerald-400 bg-emerald-950/40 hover:bg-emerald-900/50 rounded-xl transition border border-emerald-500/20">
-          <i data-lucide="download" class="w-4 h-4 flex-shrink-0"></i>
-          <span class="hide-collapsed">Instalar App</span>
-        </button>
         <button type="button" onclick="fazerLogout()" class="w-full flex items-center gap-3 px-4 py-3 text-xs font-bold text-rose-400 hover:bg-rose-500/10 rounded-xl transition">
           <i data-lucide="log-out" class="w-4 h-4 flex-shrink-0"></i>
           <span class="hide-collapsed">Sair do Sistema</span>
@@ -455,7 +451,7 @@
         <section id="aba_ferramentas" class="space-y-6 hidden">
           <div>
             <h3 class="text-base font-extrabold text-slate-900 uppercase tracking-wide">Ferramentas Educacionais</h3>
-            <p class="text-xs text-slate-500 mt-1">Materiais interativos e conteúdos carregados da aba <b>ferramentas</b> da planilha.</p>
+            <p class="text-xs text-slate-500 mt-1">Materiais interativos e <b>ferramentas</b> educacionais</p>
           </div>
 
           <div id="gridFerramentasCards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -1593,7 +1589,7 @@
     // ================= FERRAMENTAS EDUCACIONAIS =================
     async function carregarFerramentas() {
       const grid = document.getElementById('gridFerramentasCards');
-      grid.innerHTML = '<div class="col-span-full p-8 text-center text-slate-400">Buscando ferramentas da planilha...</div>';
+      grid.innerHTML = '<div class="col-span-full p-8 text-center text-slate-400">Atualizando busca de ferramentas educacionais</div>';
 
       try {
         const resp = await fetch(SCRIPT_URL_PLANILHA + '?action=buscarFerramentas');
@@ -1601,7 +1597,7 @@
         grid.innerHTML = '';
 
         if (!ferramentas || ferramentas.length === 0) {
-          grid.innerHTML = '<div class="col-span-full p-8 text-center text-slate-400">Nenhuma ferramenta cadastrada na aba ferramentas da planilha.</div>';
+          grid.innerHTML = '<div class="col-span-full p-8 text-center text-slate-400">Nenhuma ferramenta cadastrada.</div>';
           return;
         }
 
@@ -1652,7 +1648,7 @@
     async function salvarNovoAlunoPeloInstrutor(e) {
       e.preventDefault();
       const btn = document.getElementById('btnSalvarAluno');
-      btn.innerText = 'Gravando na planilha...';
+      btn.innerText = 'Gravando na informações...';
       btn.disabled = true;
 
       try {
@@ -1673,7 +1669,7 @@
 
         const data = await resp.json();
         if (data.success) {
-          alert('Aluno cadastrado com sucesso na aba aluno da planilha!');
+          alert('Aluno cadastrado com sucesso!');
           document.getElementById('cadNome').value = '';
           document.getElementById('cadCpf').value = '';
           document.getElementById('cadTelefone').value = '';
@@ -1684,7 +1680,7 @@
       } catch (err) {
         alert('Erro ao cadastrar aluno.');
       } finally {
-        btn.innerText = '💾 Salvar Aluno na Planilha';
+        btn.innerText = '💾 Salvar Aluno';
         btn.disabled = false;
       }
     }
