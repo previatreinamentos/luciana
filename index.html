@@ -3,17 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- ========================================================================= -->
+  <!-- [PERSONALIZAÇÃO]: TÍTULO DA ABA DO NAVEGADOR E COR DA BARRA SUPERIOR      -->
+  <!-- ========================================================================= -->
+  <!-- Altere o texto da tag <title> para mudar o nome na aba do navegador.      -->
   <title>PREVIA - Portal de Ensino Prático</title>
+  <!-- Altere o valor de "content" abaixo para mudar a cor da barra no celular   -->
   <meta name="theme-color" content="#07382e">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="PREVIA">
 
   <!-- ==================== [CONFIGURAÇÃO DO WEB APP / PWA: NOME E ÍCONE] ==================== -->
+  <!-- Aqui você altera os textos do nome do App instalado e a imagem do ícone:                -->
   <script>
-    const PWA_APP_NAME = "PREVIA - Portal de Ensino Prático";
-    const PWA_APP_SHORT_NAME = "PREVIA";
-    const PWA_APP_ICON = "https://lh3.googleusercontent.com/pw/AP1GczO9c696juncSzTlus5_jySHbA5hc5SaXHfcKPgKQgOovo07hYNiRmKd2ZL1doiJAs-wyS-aTuSvOxPWilUCh0dXhf3qi8Quj8e9vDO-JStEgWNXMUdPed7FKBWA4magwRl1YpcHnQwtznKY6ZZ6yYPK=w779-h779-s-no-gm?authuser=0";
+    const PWA_APP_NAME = "CFC da Lu - Portal de Ensino Prático"; // Nome completo exibido na instalação
+    const PWA_APP_SHORT_NAME = "CFC da Lu";                     // Nome curto abaixo do ícone no celular
+    const PWA_APP_ICON = "https://lh3.googleusercontent.com/pw/AP1GczMGI1FfuM2RGmmzf5N-ovsxPOn2tQaSUjNAoTVjEcZOiVh2uA8uadEo2RseN2GeguvlnHxR1wyCD7fDFwT5Kub_DFVpmdlugRZYH5g1mGOROWBaIGIT9sGaZxgNDEQBiMuhTvJxZmDH_bvplW9HO_b8=w875-h779-s-no-gm?authuser=0";
 
     const manifestJson = {
       name: PWA_APP_NAME,
@@ -21,8 +28,8 @@
       start_url: "./",
       scope: "./",
       display: "standalone",
-      background_color: "#2a5e5a",
-      theme_color: "#07382e",
+      background_color: "#2a5e5a", // Cor da tela de abertura (splash screen) no celular
+      theme_color: "#07382e",      // Cor da barra de status do sistema no app instalado
       icons: [
         { src: PWA_APP_ICON, sizes: "192x192", type: "image/png" },
         { src: PWA_APP_ICON, sizes: "512x512", type: "image/png" }
@@ -35,8 +42,8 @@
     document.head.appendChild(linkManifest);
   </script>
 
-  <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/pw/AP1GczO9c696juncSzTlus5_jySHbA5hc5SaXHfcKPgKQgOovo07hYNiRmKd2ZL1doiJAs-wyS-aTuSvOxPWilUCh0dXhf3qi8Quj8e9vDO-JStEgWNXMUdPed7FKBWA4magwRl1YpcHnQwtznKY6ZZ6yYPK=w779-h779-s-no-gm?authuser=0">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://lh3.googleusercontent.com/pw/AP1GczO9c696juncSzTlus5_jySHbA5hc5SaXHfcKPgKQgOovo07hYNiRmKd2ZL1doiJAs-wyS-aTuSvOxPWilUCh0dXhf3qi8Quj8e9vDO-JStEgWNXMUdPed7FKBWA4magwRl1YpcHnQwtznKY6ZZ6yYPK=w779-h779-s-no-gm?authuser=0">
+  <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/pw/AP1GczMGI1FfuM2RGmmzf5N-ovsxPOn2tQaSUjNAoTVjEcZOiVh2uA8uadEo2RseN2GeguvlnHxR1wyCD7fDFwT5Kub_DFVpmdlugRZYH5g1mGOROWBaIGIT9sGaZxgNDEQBiMuhTvJxZmDH_bvplW9HO_b8=w875-h779-s-no-gm?authuser=0">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://lh3.googleusercontent.com/pw/AP1GczMGI1FfuM2RGmmzf5N-ovsxPOn2tQaSUjNAoTVjEcZOiVh2uA8uadEo2RseN2GeguvlnHxR1wyCD7fDFwT5Kub_DFVpmdlugRZYH5g1mGOROWBaIGIT9sGaZxgNDEQBiMuhTvJxZmDH_bvplW9HO_b8=w875-h779-s-no-gm?authuser=0">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -47,7 +54,20 @@
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 
   <style>
-    :root { --bg-page: #2a5e5a; --bg-card: #07382e; --btn-color: #f25b24; --btn-text: #ffffff; --highlight: #f25b24; --input-bg: #e3ece9; --input-text: #8fa29d; }
+    /* ========================================================================= */
+    /* [PERSONALIZAÇÃO PRINCIPAL DE CORES GLOBAIS - CSS VARIABLES]              */
+    /* Modifique os códigos hexadecimais abaixo para mudar as cores em cascata:  */
+    /* ========================================================================= */
+    :root { 
+      --bg-page: #505058;     /* Cor de fundo principal da tela de login        */
+      --bg-card: #212121;     /* Cor do card central de login e do menu lateral  */
+      --btn-color: #e42268;   /* Cor primária dos botões principais de ação     */
+      --btn-text: #ffffff;    /* Cor do texto dentro dos botões principais       */
+      --highlight: #e42268;   /* Cor de destaque das letras do logo (ex: PREVIA)*/
+      --input-bg: #e3ece9;    /* Cor de fundo das caixas de texto (inputs)       */
+      --input-text: #8fa29d;  /* Cor do texto digitado ou placeholder            */
+    }
+
     * { margin:0; padding:0; box-sizing:border-box; font-family:'Plus Jakarta Sans', sans-serif; }
     body { min-height:100vh; background-color:var(--bg-page); color:#1e293b; }
     .sidebar-transition { transition: width 0.3s ease, padding 0.3s ease; }
@@ -60,10 +80,19 @@
     .cal-grid-days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
     .cal-day-cell { height: 42px; display: flex; align-items: center; justify-content: center; border-radius: 12px; font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.2s; border: 1.5px solid transparent; }
     .cal-day-cell.vazio { cursor: default; background: transparent !important; border: none; }
+    
+    /* ========================================================================= */
+    /* [PERSONALIZAÇÃO]: CORES DOS DIAS NO CALENDÁRIO                           */
+    /* ========================================================================= */
+    /* Dia livre / sem aula agendada: */
     .cal-day-cell.livre { background: #ecfdf5; color: #059669; border-color: #a7f3d0; }
+    /* Dia com aula ou ocupado: */
     .cal-day-cell.ocupado { background: #ffedd5; color: #ea580c; border-color: #fed7aa; }
+    /* Dia que tem aula marcada pelo aluno: */
     .cal-day-cell.minha-aula { background: #ffedd5; color: #ea580c; border: 2px solid #ea580c; font-weight: 800; }
+    /* Dia selecionado pelo clique: */
     .cal-day-cell.selecionado { outline: 2.5px solid var(--btn-color); font-weight: 800; transform: scale(1.04); }
+
     .tab-login-btn { cursor: pointer !important; z-index: 50 !important; position: relative !important; }
   </style>
 </head>
@@ -87,11 +116,21 @@
   <!-- ============================================================================== -->
 
   <!-- ================= TELA DE LOGIN ================= -->
+  <!-- [PERSONALIZAÇÃO DE CORES]: O fundo desta seção é definido por var(--bg-page) -->
   <div id="telaLogin" class="min-h-screen flex items-center justify-center p-4 relative z-10" style="background-color: var(--bg-page);">
+    
+    <!-- [PERSONALIZAÇÃO DE CORES]: O card de login usa var(--bg-card) -->
     <div class="w-full max-w-md p-8 rounded-3xl shadow-2xl flex flex-col items-center relative z-20" style="background-color: var(--bg-card);">
+      
+      <!-- [PERSONALIZAÇÃO DE TEXTO E COR]: Logotipo "PREVIA" -->
+      <!-- Troque "PREV" e "IA" caso queira outro nome. A cor do "IA" vem de var(--highlight) -->
       <div class="text-3xl font-black text-white tracking-wider mb-2">PREV<span style="color: var(--highlight);">IA</span></div>
+      
+      <!-- [PERSONALIZAÇÃO DE TEXTO]: Subtítulo da marca -->
       <p class="text-slate-300 text-xs font-semibold mb-6 text-center">Portal de Ensino Prático</p>
 
+      <!-- [PERSONALIZAÇÃO DE TEXTO E CORES]: Botões de Perfil (Aluno / Instrutor) -->
+      <!-- O botão ativo usa background-color: var(--btn-color). O inativo usa text-teal-300 -->
       <div class="w-full bg-black/40 p-1.5 rounded-2xl flex gap-1.5 mb-6 border border-white/10 relative z-30">
         <button id="btnTabAluno" type="button" onclick="trocarPerfilLogin('aluno')" class="tab-login-btn flex-1 py-3 rounded-xl text-xs font-black text-white shadow-lg transition select-none cursor-pointer" style="background-color: var(--btn-color);">Sou Aluno</button>
         <button id="btnTabInstrutor" type="button" onclick="trocarPerfilLogin('instrutor')" class="tab-login-btn flex-1 py-3 rounded-xl text-xs font-black text-teal-300 hover:text-white transition select-none bg-transparent cursor-pointer">Sou Instrutor</button>
@@ -99,14 +138,19 @@
 
       <form id="formLogin" onsubmit="realizarLogin(event)" class="w-full space-y-4 relative z-20">
         <div>
+          <!-- [PERSONALIZAÇÃO DE TEXTO]: Rótulo do primeiro campo -->
           <label class="block text-xs font-bold text-white uppercase mb-1" id="lblDoc">CPF ou Celular do Usuário</label>
+          <!-- [PERSONALIZAÇÃO DE CORES]: Fundo do input (var(--input-bg)) e texto (var(--input-text)) -->
           <input id="inputDoc" type="text" required placeholder="000.000.000-00 ou Celular" class="w-full h-12 px-4 rounded-xl font-semibold text-sm outline-none" style="background-color: var(--input-bg); color: var(--input-text);">
         </div>
         <div>
+          <!-- [PERSONALIZAÇÃO DE TEXTO]: Rótulo de Senha -->
           <label class="block text-xs font-bold text-white uppercase mb-1">Senha de Acesso</label>
           <input id="inputSenha" type="password" required placeholder="Digite sua senha" class="w-full h-12 px-4 rounded-xl font-semibold text-sm outline-none" style="background-color: var(--input-bg); color: var(--input-text);">
+          <!-- [PERSONALIZAÇÃO DE TEXTO]: Dica de senha exibida abaixo do campo -->
           <p id="txtDica" class="text-[11px] text-slate-400 mt-1">Dica: Por padrão, a sua senha são os 4 primeiros dígitos do CPF ou Celular.</p>
         </div>
+        <!-- [PERSONALIZAÇÃO DE TEXTO E COR]: Botão de envio "Acessar o Painel" -->
         <button type="submit" id="btnEntrar" class="w-full h-12 rounded-xl text-sm font-bold text-white shadow-lg mt-2 flex items-center justify-center gap-2 transition cursor-pointer" style="background-color: var(--btn-color);">Acessar o Painel</button>
       </form>
     </div>
@@ -114,25 +158,37 @@
 
   <!-- ================= PAINEL DO SISTEMA ================= -->
   <div id="telaDashboard" class="hidden min-h-screen flex flex-col md:flex-row relative z-10">
+    
+    <!-- ========================================================================= -->
+    <!-- [PERSONALIZAÇÃO]: SIDEBAR / MENU LATERAL                                  -->
+    <!-- Cor de fundo: var(--bg-card). Cor do texto: white                        -->
+    <!-- ========================================================================= -->
     <aside id="sidebarMenu" class="sidebar w-full md:w-64 flex flex-col justify-between p-6 border-r border-white/10 sidebar-transition flex-shrink-0" style="background-color: var(--bg-card); color: white;">
       <div class="space-y-6">
         <div class="flex items-center justify-between">
+          <!-- Logo no topo da sidebar -->
           <div class="text-xl font-black tracking-wider hide-collapsed">PREV<span style="color: var(--highlight);">IA</span></div>
+          <!-- Botão para encolher/expandir o menu -->
           <button type="button" onclick="alternarRecolherSidebar()" class="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-black" style="background-color: var(--btn-color);">&lt;&gt;</button>
         </div>
         <div class="p-3 bg-black/25 rounded-2xl border border-white/10 flex items-center gap-3">
+          <!-- Círculo com iniciais do usuário logado -->
           <div class="avatar-circle w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm text-white flex-shrink-0" style="background-color: var(--btn-color);" id="badgeIniciais">AS</div>
           <div class="overflow-hidden hide-collapsed">
             <div class="text-xs font-bold truncate" id="sideNomeUsuario">Carregando...</div>
             <div class="text-[10px] text-teal-300 font-semibold" id="sideStatusUsuario">● Aluno Ativo</div>
           </div>
         </div>
+        
+        <!-- [PERSONALIZAÇÃO DE TEXTO]: Itens de Menu do Aluno -->
         <nav id="menuNavAluno" class="space-y-1.5">
           <button type="button" id="btnNav_relatorio" onclick="navegarParaAba('relatorio')" class="menu-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-bold transition text-white" style="background-color: var(--btn-color);"><i data-lucide="layout-dashboard" class="w-4 h-4"></i><span class="hide-collapsed">Relatório Geral</span></button>
           <button type="button" id="btnNav_agendar" onclick="navegarParaAba('agendar')" class="menu-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-bold transition text-slate-300 hover:bg-white/5"><i data-lucide="calendar-plus" class="w-4 h-4"></i><span class="hide-collapsed">Agendar Aula</span></button>
           <button type="button" id="btnNav_historico" onclick="navegarParaAba('historico')" class="menu-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-bold transition text-slate-300 hover:bg-white/5"><i data-lucide="history" class="w-4 h-4"></i><span class="hide-collapsed">Histórico & Notas</span></button>
           <button type="button" id="btnNav_ead" onclick="navegarParaAba('ead')" class="menu-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-bold transition text-slate-300 hover:bg-white/5"><i data-lucide="graduation-cap" class="w-4 h-4"></i><span class="hide-collapsed">Cursos & Aulas EAD</span></button>
         </nav>
+        
+        <!-- [PERSONALIZAÇÃO DE TEXTO]: Itens de Menu do Instrutor -->
         <nav id="menuNavInstrutor" class="hidden space-y-1.5">
           <button type="button" id="btnNav_agenda_inst" onclick="navegarParaAba('agenda_inst')" class="menu-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-bold transition text-white" style="background-color: var(--btn-color);"><i data-lucide="calendar" class="w-4 h-4"></i><span class="hide-collapsed">Minha Agenda</span></button>
           <button type="button" id="btnNav_cadastro_aluno" onclick="navegarParaAba('cadastro_aluno')" class="menu-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-bold transition text-slate-300 hover:bg-white/5"><i data-lucide="user-plus" class="w-4 h-4"></i><span class="hide-collapsed">Cadastrar Novo Aluno</span></button>
@@ -140,23 +196,31 @@
         </nav>
       </div>
       <div class="space-y-2">
+        <!-- Botão Sair do Sistema (Cor: text-rose-400) -->
         <button type="button" onclick="fazerLogout()" class="w-full flex items-center gap-3 px-4 py-3 text-xs font-bold text-rose-400 hover:bg-rose-500/10 rounded-xl transition"><i data-lucide="log-out" class="w-4 h-4"></i><span class="hide-collapsed">Sair do Sistema</span></button>
       </div>
     </aside>
 
+    <!-- ÁREA PRINCIPAL DE CONTEÚDO (Fundo claro: bg-slate-50) -->
     <main class="flex-1 flex flex-col min-w-0 bg-slate-50 overflow-y-auto">
+      
+      <!-- CABEÇALHO SUPERIOR (HEADER) -->
       <header class="bg-white border-b border-slate-200 py-3.5 px-4 sm:px-8 flex flex-wrap justify-between items-center sticky top-0 z-30 gap-3">
         <div class="flex items-center gap-3">
+          <!-- Título da página atual atualizado dinamicamente -->
           <h2 id="topoTituloSecao" class="text-sm sm:text-base font-extrabold text-slate-900 uppercase truncate">MINHA AGENDA PRÁTICA</h2>
+          <!-- Botão "Atualizar" -->
           <button type="button" onclick="atualizarDadosGerais()" class="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 border border-slate-300 rounded-xl text-xs font-bold text-slate-700 flex items-center gap-1.5 transition"><i data-lucide="rotate-cw" class="w-3.5 h-3.5 text-teal-700"></i> Atualizar</button>
         </div>
         <div class="flex items-center gap-4">
           <div class="text-right hidden sm:block">
             <div class="text-[9px] text-slate-400 font-bold uppercase">Instrutor Vinculado</div>
+            <!-- Nome e veículo do instrutor no topo -->
             <div class="text-xs font-extrabold text-teal-700" id="topoNomeInstrutor">Amauri de Souza</div>
             <div class="text-[10px] text-slate-500 font-semibold" id="topoVeiculoInstrutor">Veículo: Ford Ka</div>
             <button type="button" onclick="abrirModalSaibaMais()" class="text-[10px] font-bold text-[var(--btn-color)] hover:underline block ml-auto mt-0.5">Saiba mais sobre seu instrutor</button>
           </div>
+          <!-- Badge de conexão (Cores: bg-emerald-50 text-emerald-700) -->
           <span class="px-3 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full text-[11px] font-bold">Servidor Conectado</span>
         </div>
       </header>
@@ -166,6 +230,7 @@
         <!-- ABA INSTRUTOR COM OS 3 CARDS NATIVOS -->
         <section id="aba_agenda_inst" class="space-y-6 hidden">
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full">
+            <!-- Card 1: Alunos Atendidos (Ícone em teal-700) -->
             <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
               <div class="p-3 bg-teal-50 text-teal-700 rounded-xl flex-shrink-0"><i data-lucide="users" class="w-6 h-6"></i></div>
               <div>
@@ -174,6 +239,7 @@
               </div>
             </div>
 
+            <!-- Card 2: Aulas Aplicadas (Ícone em emerald-700 e número emerald-600) -->
             <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
               <div class="p-3 bg-emerald-50 text-emerald-700 rounded-xl flex-shrink-0"><i data-lucide="check-circle-2" class="w-6 h-6"></i></div>
               <div>
@@ -182,6 +248,7 @@
               </div>
             </div>
 
+            <!-- Card 3: Aulas Agendadas (Ícone em orange-600 e número orange-500) -->
             <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
               <div class="p-3 bg-orange-50 text-orange-600 rounded-xl flex-shrink-0"><i data-lucide="calendar-clock" class="w-6 h-6"></i></div>
               <div>
@@ -191,11 +258,14 @@
             </div>
           </div>
 
+          <!-- CALENDÁRIO DO INSTRUTOR -->
           <div class="cal-card shadow-sm space-y-4">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b pb-3">
               <div class="font-black text-sm text-slate-900 uppercase flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4 text-teal-700"></i><span id="calMesAnoInstrutor">Mês Atual</span></div>
+              <!-- Legendas de Cores do Calendário (bg-emerald-500 e bg-orange-500) -->
               <div class="flex items-center gap-4 text-xs font-bold"><span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-emerald-500"></span> Sem Aulas</span><span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-orange-500"></span> Com Aulas</span></div>
               <div class="flex gap-2">
+                <!-- Botão "Liberar Horários" usa a cor primária var(--btn-color) -->
                 <button type="button" onclick="abrirModalLiberarHorario()" class="px-3 py-1.5 text-white text-xs font-bold rounded-lg shadow transition" style="background-color: var(--btn-color);">➕ Liberar Horários</button>
                 <button type="button" onclick="carregarAgendaInstrutor(true)" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg transition">Ver Todas</button>
               </div>
@@ -217,9 +287,16 @@
 
         <!-- ABA RELATÓRIO DO ALUNO -->
         <section id="aba_relatorio" class="space-y-6 hidden">
+          <!-- Aviso de segurança (Cor de fundo: bg-amber-50, borda: border-amber-500, texto: text-amber-900) -->
           <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-2xl flex items-start gap-3"><i data-lucide="shield-alert" class="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5"></i><div><div class="text-xs font-bold text-amber-950 uppercase">Aviso de Segurança Crítico para o Aluno</div><div class="text-xs text-amber-900 mt-1">Para sua total segurança pessoal: <b>NUNCA entre em qualquer veículo de treinamento</b> sem antes validar visualmente as informações acima!</div></div></div>
+          
+          <!-- Banner de boas-vindas em degradê (bg-gradient-to-r from-teal-50 to-emerald-50) -->
           <div class="p-8 rounded-3xl bg-gradient-to-r from-teal-50 to-emerald-50 border border-teal-100"><span class="px-3 py-1 bg-white text-xs font-bold uppercase rounded-full shadow-sm" style="color: var(--btn-color);">Portal de Aulas</span><h1 class="text-2xl font-extrabold text-slate-900 mt-2" id="boxBoasVindas">Olá, Aluno!</h1><p class="text-slate-600 text-sm mt-1">Gerencie suas aulas e acompanhe seu desenvolvimento prático em tempo real.</p></div>
+          
+          <!-- Cards com dados cadastrais do Aluno -->
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm"><span class="text-[10px] font-bold text-slate-400 uppercase">Telefone</span><div class="text-sm font-bold text-slate-900 mt-1" id="boxTelefone">--</div></div><div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm"><span class="text-[10px] font-bold text-slate-400 uppercase">E-mail Cadastrado</span><div class="text-sm font-bold text-slate-900 mt-1 truncate" id="boxEmail">--</div></div><div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm"><span class="text-[10px] font-bold text-slate-400 uppercase">Endereço Registrado</span><div class="text-sm font-bold text-slate-900 mt-1 truncate" id="boxEndereco">--</div></div></div>
+          
+          <!-- Card do Instrutor Vinculado -->
           <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3"><div class="flex items-center gap-2 text-sm font-bold text-slate-900 uppercase"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-600"></i> Instrutor Vinculado e Veículo Oficial</div><div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-slate-50 p-4 rounded-xl border border-slate-200 gap-4"><div><div class="text-xs font-bold text-slate-400 uppercase">Instrutor do Aluno</div><div class="text-sm font-bold text-slate-900" id="cardInstrutorNome">--</div><div class="text-xs text-teal-700 font-semibold mt-0.5" id="cardInstrutorCarro">Veículo cadastrado: --</div></div><button type="button" onclick="abrirModalSaibaMais()" class="px-4 py-2 bg-white border border-[var(--btn-color)] text-[var(--btn-color)] rounded-xl text-xs font-bold hover:bg-orange-50 transition">Saiba Mais / Ver Foto</button></div></div>
         </section>
 
@@ -241,7 +318,7 @@
             <div class="cal-grid-days" id="calDiasAlunoGrid"></div>
           </div>
 
-          <!-- BLOCO DE AULAS DO ALUNO NESSA DATA -->
+          <!-- BLOCO DE AULAS DO ALUNO NESSA DATA (Cores em tons de laranja/amber) -->
           <div id="boxMinhasAulasNesteDia" class="hidden bg-orange-50 p-5 rounded-2xl border border-orange-200 space-y-2">
             <div class="flex items-center justify-between">
               <div class="text-xs font-black uppercase text-orange-950 flex items-center gap-2">
@@ -279,7 +356,22 @@
 
         <!-- ABA HISTÓRICO -->
         <section id="aba_historico" class="hidden space-y-6">
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6"><div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"><span class="text-xs font-bold uppercase text-slate-400 tracking-wider">AULAS PRÁTICAS TOTAIS</span><div class="text-3xl font-black text-slate-900 mt-2" id="metricasTotalAulas">0</div></div><div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"><span class="text-xs font-bold uppercase text-slate-400 tracking-wider">AULAS CONCLUÍDAS</span><div class="text-3xl font-black text-emerald-600 mt-2" id="metricasConcluidas">0</div></div><div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"><span class="text-xs font-bold uppercase text-slate-400 tracking-wider">MÉDIA GERAL</span><div class="text-3xl font-black text-orange-500 mt-2" id="metricasMediaGeral">0.0</div></div></div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+              <span class="text-xs font-bold uppercase text-slate-400 tracking-wider">AULAS PRÁTICAS TOTAIS</span>
+              <div class="text-3xl font-black text-slate-900 mt-2" id="metricasTotalAulas">0</div>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+              <span class="text-xs font-bold uppercase text-slate-400 tracking-wider">AULAS CONCLUÍDAS</span>
+              <!-- Cor do contador de concluídas: text-emerald-600 -->
+              <div class="text-3xl font-black text-emerald-600 mt-2" id="metricasConcluidas">0</div>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+              <span class="text-xs font-bold uppercase text-slate-400 tracking-wider">MÉDIA GERAL</span>
+              <!-- Cor do contador de média: text-orange-500 -->
+              <div class="text-3xl font-black text-orange-500 mt-2" id="metricasMediaGeral">0.0</div>
+            </div>
+          </div>
           <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden"><div class="overflow-x-auto"><table class="w-full text-left text-xs"><thead class="bg-slate-50 border-b"><tr><th class="p-4 font-bold text-slate-600 uppercase">AULA</th><th class="p-4 font-bold text-slate-600 uppercase">DATA & HORÁRIO</th><th class="p-4 font-bold text-slate-600 uppercase">INSTRUTOR / LOCAL / VEÍCULO</th><th class="p-4 font-bold text-slate-600 uppercase">STATUS / NOTA</th><th class="p-4 font-bold text-slate-600 uppercase">AÇÕES</th></tr></thead><tbody id="tabelaHistoricoAlunoCorpo" class="divide-y divide-slate-100"><tr><td colspan="5" class="p-6 text-center text-slate-400">Carregando histórico...</td></tr></tbody></table></div></div>
         </section>
 
@@ -306,6 +398,7 @@
               </div>
               <div><label class="block text-xs font-bold text-slate-700 uppercase mb-1">Endereço Residencial</label><input type="text" id="cadEndereco" class="w-full h-11 px-4 border border-slate-200 rounded-xl text-xs font-semibold outline-none focus:border-orange-500" placeholder="Rua, número, bairro e cidade"></div>
               <div><label class="block text-xs font-bold text-slate-700 uppercase mb-1">Instrutor Vinculado</label><input type="text" id="cadInstrutor" class="w-full h-11 px-4 border border-slate-200 rounded-xl text-xs font-semibold outline-none bg-slate-50" readonly></div>
+              <!-- Botão salvar aluno com var(--btn-color) -->
               <button type="submit" id="btnSalvarAluno" class="w-full py-3.5 text-white font-bold text-xs rounded-xl shadow-lg mt-4 flex items-center justify-center gap-2" style="background-color: var(--btn-color);"><span>💾 Salvar Aluno</span></button>
             </form>
           </div>
@@ -361,10 +454,12 @@
               <input type="text" id="filtroPesquisaCursos" oninput="filtrarMateriaisNaTela()" placeholder="Pesquisar por nome de curso ou categoria..." class="w-full h-10 pl-10 pr-4 rounded-xl border border-slate-200 text-xs font-semibold outline-none focus:border-orange-500">
             </div>
             <div class="flex flex-col sm:flex-row gap-2 w-full lg:w-auto">
+              <!-- Botão Criar Avaliação (Verde esmeralda: bg-emerald-600) -->
               <button type="button" onclick="abrirModalCriarAvaliacao()" class="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow transition flex items-center justify-center gap-2 cursor-pointer">
                 <i data-lucide="file-plus-2" class="w-4 h-4"></i>
                 <span>Criar Avaliação / Critérios</span>
               </button>
+              <!-- Botão Novo Curso usa var(--btn-color) -->
               <button type="button" onclick="abrirModalCadastrarMaterial()" class="px-4 py-2.5 text-white font-bold text-xs rounded-xl shadow transition flex items-center justify-center gap-2 cursor-pointer" style="background-color: var(--btn-color);">
                 <i data-lucide="plus-circle" class="w-4 h-4"></i>
                 <span>Novo Curso / Ferramenta</span>
@@ -395,10 +490,12 @@
 
   <!-- ================= BANNER FLUTUANTE DE INSTALAÇÃO DO APP (LOGIN E PAINEL) ================= -->
   <div id="bannerInstalacaoApp" class="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-md bg-black text-white p-4 rounded-2xl shadow-2xl border border-white/10 hidden flex-col sm:flex-row items-center justify-between gap-3 transition-all duration-300">
+    <!-- [PERSONALIZAÇÃO DE TEXTO]: Chamada do Banner PWA -->
     <div class="text-xs font-bold text-center sm:text-left">
       Deseja instalar o aplicativo oficial para acesso rápido?
     </div>
     <div class="flex items-center gap-3 w-full sm:w-auto justify-center">
+      <!-- Botão instalar app (bg-emerald-500) -->
       <button type="button" onclick="acionarInstalacaoApp()" class="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-black font-extrabold text-xs rounded-xl shadow transition cursor-pointer flex-1 sm:flex-none text-center">
         Instalar Aplicativo
       </button>
@@ -435,7 +532,7 @@
           </div>
 
           <div id="containerListaCriteriosNovos" class="space-y-2 max-h-52 overflow-y-auto p-2 border border-slate-100 rounded-2xl bg-slate-50">
-            <!-- Linhas dinâmicas -->
+            <!-- Linhas dinâmicas geradas via JavaScript -->
           </div>
         </div>
 
@@ -445,6 +542,7 @@
 
         <div class="flex justify-end gap-2 pt-2 border-t">
           <button type="button" onclick="fecharModalCriarAvaliacao()" class="px-4 py-2 text-xs font-bold text-slate-500 hover:bg-slate-50 rounded-xl">Cancelar</button>
+          <!-- Botão gravar avaliação (bg-emerald-600) -->
           <button type="submit" id="btnSalvarNovaAvaliacao" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow-lg transition">
             💾 Gravar Avaliação no Firebase
           </button>
@@ -543,6 +641,7 @@
           <div id="modalInstAvatarFallback" class="text-teal-700"><i data-lucide="user-round" class="w-16 h-16"></i></div>
         </div>
         <div>
+          <!-- [PERSONALIZAÇÃO DE TEXTO]: Nome e Veículo do Instrutor no Modal -->
           <h4 id="modalInstNome" class="text-lg font-bold text-slate-900">Amauri de Souza</h4>
           <span id="modalInstVeiculo" class="inline-block text-xs font-semibold text-teal-800 bg-teal-50 border border-teal-100 rounded-full px-3 py-1 mt-1">🚗 Veículo: Ford Ka</span>
         </div>
@@ -658,6 +757,10 @@
 
     const ITENS_COMPORTAMENTAIS_PADRAO = ["Ansioso", "Atento", "Seguro", "Condução defensiva", "Segue as orientações do instrutor"];
 
+    /* ========================================================================= */
+    /* [PERSONALIZAÇÃO]: TEXTOS E CORES DINÂMICAS DE LOGIN                      */
+    /* Modifique aqui se desejar mudar os rótulos e placeholders dinâmicos:       */
+    /* ========================================================================= */
     function trocarPerfilLogin(perfil) {
       perfilAtual = perfil;
       const btnAluno = document.getElementById('btnTabAluno');
@@ -671,6 +774,8 @@
         btnAluno.className = 'tab-login-btn flex-1 py-3 rounded-xl text-xs font-black text-white shadow-lg transition select-none cursor-pointer';
         btnInst.style.setProperty('background-color', 'transparent', 'important');
         btnInst.className = 'tab-login-btn flex-1 py-3 rounded-xl text-xs font-black text-teal-300 hover:text-white transition select-none bg-transparent cursor-pointer';
+        
+        // Textos para o perfil Aluno:
         lblDoc.innerText = 'CPF ou Celular do Usuário';
         txtDica.innerText = 'Dica: Por padrão, a sua senha são os 4 primeiros dígitos do CPF ou Celular.';
         inputDoc.placeholder = '000.000.000-00 ou Celular';
@@ -679,6 +784,8 @@
         btnInst.className = 'tab-login-btn flex-1 py-3 rounded-xl text-xs font-black text-white shadow-lg transition select-none cursor-pointer';
         btnAluno.style.setProperty('background-color', 'transparent', 'important');
         btnAluno.className = 'tab-login-btn flex-1 py-3 rounded-xl text-xs font-black text-teal-300 hover:text-white transition select-none bg-transparent cursor-pointer';
+        
+        // Textos para o perfil Instrutor:
         lblDoc.innerText = 'CPF ou Celular do Instrutor';
         txtDica.innerText = 'Dica: Digite sua senha cadastrada no banco.';
         inputDoc.placeholder = 'Digite seu CPF ou Celular';
@@ -753,12 +860,20 @@
       }
     }
 
+    /* ========================================================================= */
+    /* [PERSONALIZAÇÃO]: TÍTULOS DAS SEÇÕES NO CABEÇALHO SUPERIOR                */
+    /* Altere os textos abaixo para modificar o que aparece no topo de cada tela:*/
+    /* ========================================================================= */
     function navegarParaAba(nomeAba) {
       abaAtivaAtual = nomeAba;
       const abas = ['relatorio', 'agendar', 'historico', 'ead', 'agenda_inst', 'cadastro_aluno', 'ferramentas'];
       const titulos = {
-        'relatorio': 'RELATÓRIO GERAL', 'agendar': 'AGENDAR AULA PRÁTICA', 'historico': 'HISTÓRICO & NOTAS',
-        'ead': 'CURSOS & AULAS EAD', 'agenda_inst': 'MINHA AGENDA PRÁTICA', 'cadastro_aluno': 'CADASTRAR NOVO ALUNO',
+        'relatorio': 'RELATÓRIO GERAL', 
+        'agendar': 'AGENDAR AULA PRÁTICA', 
+        'historico': 'HISTÓRICO & NOTAS',
+        'ead': 'CURSOS & AULAS EAD', 
+        'agenda_inst': 'MINHA AGENDA PRÁTICA', 
+        'cadastro_aluno': 'CADASTRAR NOVO ALUNO',
         'ferramentas': 'FERRAMENTAS & CURSOS'
       };
 
@@ -889,6 +1004,7 @@
       if (lista.length === 0) { corpo.innerHTML = '<tr><td colspan="5" class="p-4 text-center text-slate-400">Nenhuma aula agendada para esta data.</td></tr>'; return; }
       lista.forEach(a => {
         const tr = document.createElement('tr');
+        // Badges: Verde (concluída) ou Laranja (pendente):
         const badgeCor = a.ehConcluida ? 'bg-emerald-50 text-emerald-700 border-emerald-200' : 'bg-orange-50 text-orange-600 border-orange-200 font-black';
         const acaoBtn = a.ehConcluida 
           ? `<button type="button" onclick="visualizarFichaAula('${encodeURIComponent(JSON.stringify(a))}')" class="px-3 py-1 bg-white hover:bg-slate-50 border border-slate-200 text-teal-700 rounded-lg font-bold text-xs flex items-center gap-1.5"><i data-lucide="eye" class="w-3.5 h-3.5"></i> Ver Ficha</button>`
@@ -966,6 +1082,7 @@
         const dataFormatada = `${dia}/${mes}/${ano}`;
         const local = document.getElementById('dtLocal').value;
 
+        // [PERSONALIZAÇÃO]: Grade de horários padrão gerada no dia todo
         const gradeHorarios = [
           { inicio: "08:00", fim: "08:50", titulo: "Baliza / Prática" },
           { inicio: "09:00", fim: "09:50", titulo: "Trânsito Urbano" },
@@ -1456,6 +1573,10 @@
       } catch (err) { alert('Erro ao gravar avaliação: ' + err.message); } finally { btn.innerText = 'Concluir e Registrar Aula'; btn.disabled = false; }
     }
 
+    /* ========================================================================= */
+    /* [PERSONALIZAÇÃO]: MENSAGEM DO WHATSAPP                                    */
+    /* Altere o formato do texto disparado para o WhatsApp:                     */
+    /* ========================================================================= */
     function compartilharWhatsApp(aulaEncoded) {
       const a = JSON.parse(decodeURIComponent(aulaEncoded));
       let evTxt = '';
@@ -1465,24 +1586,49 @@
       window.open(`https://api.whatsapp.com/send?phone=${tel}&text=${encodeURIComponent(msg)}`, '_blank');
     }
 
+    /* ========================================================================= */
+    /* [PERSONALIZAÇÃO]: CORES E TÍTULOS DO PDF GERADO                           */
+    /* Altere as cores RGB e fontes usadas no documento PDF:                     */
+    /* ========================================================================= */
     function exportarFichaParaPdf(aula, detalhes) {
       try {
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF({ unit: 'pt', format: 'a4' });
-        doc.setFillColor(4, 46, 42); doc.rect(0, 0, 595, 60, 'F');
-        doc.setTextColor(255, 255, 255); doc.setFontSize(16); doc.text("FICHA DE AVALIAÇÃO PRÁTICA - PREVIA", 40, 38);
-        doc.setTextColor(30, 41, 59); doc.setFontSize(11);
+        
+        // Cabeçalho escuro do PDF (RGB 4, 46, 42):
+        doc.setFillColor(4, 46, 42); 
+        doc.rect(0, 0, 595, 60, 'F');
+        doc.setTextColor(255, 255, 255); 
+        doc.setFontSize(16); 
+        doc.text("FICHA DE AVALIAÇÃO PRÁTICA - PREVIA", 40, 38);
+        
+        doc.setTextColor(30, 41, 59); 
+        doc.setFontSize(11);
         doc.text(`Aluno: ${aula.alunoNome || usuarioLogado.nome}`, 40, 90);
         doc.text(`Aula: ${aula.titulo}`, 40, 108);
         doc.text(`Data: ${aula.data} (${aula.inicio} às ${aula.fim})`, 40, 126);
         doc.text(`Instrutor: ${aula.instrutor || 'Amauri de Souza'}`, 40, 144);
-        doc.setFillColor(240, 90, 36); doc.roundedRect(420, 80, 135, 65, 8, 8, 'F');
-        doc.setTextColor(255, 255, 255); doc.setFontSize(10); doc.text("NOTA DA AULA", 445, 102); doc.setFontSize(22); doc.text(`${aula.nota} / 10.0`, 435, 132);
-        doc.setTextColor(15, 23, 42); doc.setFontSize(12); doc.text("PARECER PEDAGÓGICO DO INSTRUTOR:", 40, 185);
-        doc.setFontSize(10); doc.setTextColor(71, 85, 105);
+        
+        // Caixa de destaque da nota (RGB 240, 90, 36):
+        doc.setFillColor(240, 90, 36); 
+        doc.roundedRect(420, 80, 135, 65, 8, 8, 'F');
+        doc.setTextColor(255, 255, 255); 
+        doc.setFontSize(10); 
+        doc.text("NOTA DA AULA", 445, 102); 
+        doc.setFontSize(22); 
+        doc.text(`${aula.nota} / 10.0`, 435, 132);
+        
+        doc.setTextColor(15, 23, 42); 
+        doc.setFontSize(12); 
+        doc.text("PARECER PEDAGÓGICO DO INSTRUTOR:", 40, 185);
+        doc.setFontSize(10); 
+        doc.setTextColor(71, 85, 105);
         const splitObs = doc.splitTextToSize(aula.obs || 'O aluno demonstrou excelente aproveitamento técnico nos percursos práticos.', 515);
         doc.text(splitObs, 40, 205);
-        if (detalhes.evidenciaLink) { doc.setTextColor(240, 90, 36); doc.text(`Link de Evidência Anexado: ${detalhes.evidenciaLink}`, 40, 250); }
+        if (detalhes.evidenciaLink) { 
+          doc.setTextColor(240, 90, 36); 
+          doc.text(`Link de Evidência Anexado: ${detalhes.evidenciaLink}`, 40, 250); 
+        }
         doc.save(`Avaliacao_${aula.titulo}_${aula.data.replace(/\//g, '-')}.pdf`);
       } catch (err) { compartilharWhatsApp(encodeURIComponent(JSON.stringify(aula))); }
     }
@@ -1726,12 +1872,12 @@
       const container = document.getElementById('containerListaCriteriosNovos');
       container.innerHTML = '';
       
-      const criteriosIniciais = [
+      const黑criteriosIniciais = [
         "Uso correto dos pedais, embreagem e ponto de tração",
         "Atenção à sinalização, preferência e cruzamentos",
         "Alinhamento, baliza entre balizas e uso de retrovisores"
       ];
-      criteriosIniciais.forEach(crit => adicionarLinhaCriterioNovaAvaliacao(crit));
+      黑criteriosIniciais.forEach(crit => adicionarLinhaCriterioNovaAvaliacao(crit));
 
       document.getElementById('novaAvNomeModelo').value = '';
       const m = document.getElementById('modalCriarAvaliacao');
