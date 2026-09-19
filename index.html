@@ -7,20 +7,17 @@
   <!-- ========================================================================= -->
   <!-- [PERSONALIZAÇÃO]: TÍTULO DA ABA DO NAVEGADOR E COR DA BARRA SUPERIOR      -->
   <!-- ========================================================================= -->
-  <!-- Altere o texto da tag <title> CFC da LU.      -->
   <title>CFC da Lu - Portal de Ensino Prático</title>
-  <!-- Altere o valor de "content" abaixo para mudar a cor da barra no celular   -->
   <meta name="theme-color" content="#505058">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="CFC da Lu">
 
   <!-- ==================== [CONFIGURAÇÃO DO WEB APP / PWA: NOME E ÍCONE] ==================== -->
-  <!-- Aqui você altera os textos do nome do App instalado e a imagem do ícone:                -->
   <script>
-    const PWA_APP_NAME = "CFC da Lu - Portal de Ensino Prático"; // Nome completo exibido na instalação
-    const PWA_APP_SHORT_NAME = "CFC da Lu";                     // Nome curto abaixo do ícone no celular
-    const PWA_APP_ICON = "https://lh3.googleusercontent.com/pw/AP1GczMGI1FfuM2RGmmzf5N-ovsxPOn2tQaSUjNAoTVjEcZOiVh2uA8uadEo2RseN2GeguvlnHxR1wyCD7fDFwT5Kub_DFVpmdlugRZYH5g1mGOROWBaIGIT9sGaZxgNDEQBiMuhTvJxZmDH_bvplW9HO_b8=w875-h779-s-no-gm?authuser=0";
+    const PWA_APP_NAME = "CFC da Lu - Portal de Ensino Prático";
+    const PWA_APP_SHORT_NAME = "CFC da Lu";
+    const PWA_APP_ICON = "https://lh3.googleusercontent.com/pw/AP1GczMbhS60Qgu1cG2c3zpRgH5aRn0WCxVcHoak_bpMHiBJ2QAx3L7PAkLGvIQbCffGdiYgnjahH_KozAHS-dCrfkVuBYDMWKb4TiuC-8zOAAZqpZV5mn6hRwl9QTMY4joBWKoP9ygLK1jpk7JnfYIxtcsP=w406-h409-s-no-gm?authuser=0";
 
     const manifestJson = {
       name: PWA_APP_NAME,
@@ -28,8 +25,8 @@
       start_url: "./",
       scope: "./",
       display: "standalone",
-      background_color: "#505058", // Cor da tela de abertura (splash screen) no celular
-      theme_color: "#505058",      // Cor da barra de status do sistema no app instalado
+      background_color: "#505058",
+      theme_color: "#505058",
       icons: [
         { src: PWA_APP_ICON, sizes: "192x192", type: "image/png" },
         { src: PWA_APP_ICON, sizes: "512x512", type: "image/png" }
@@ -42,8 +39,8 @@
     document.head.appendChild(linkManifest);
   </script>
 
-  <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/pw/AP1GczMGI1FfuM2RGmmzf5N-ovsxPOn2tQaSUjNAoTVjEcZOiVh2uA8uadEo2RseN2GeguvlnHxR1wyCD7fDFwT5Kub_DFVpmdlugRZYH5g1mGOROWBaIGIT9sGaZxgNDEQBiMuhTvJxZmDH_bvplW9HO_b8=w875-h779-s-no-gm?authuser=0">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://lh3.googleusercontent.com/pw/AP1GczMGI1FfuM2RGmmzf5N-ovsxPOn2tQaSUjNAoTVjEcZOiVh2uA8uadEo2RseN2GeguvlnHxR1wyCD7fDFwT5Kub_DFVpmdlugRZYH5g1mGOROWBaIGIT9sGaZxgNDEQBiMuhTvJxZmDH_bvplW9HO_b8=w875-h779-s-no-gm?authuser=0">
+  <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/pw/AP1GczMbhS60Qgu1cG2c3zpRgH5aRn0WCxVcHoak_bpMHiBJ2QAx3L7PAkLGvIQbCffGdiYgnjahH_KozAHS-dCrfkVuBYDMWKb4TiuC-8zOAAZqpZV5mn6hRwl9QTMY4joBWKoP9ygLK1jpk7JnfYIxtcsP=w406-h409-s-no-gm?authuser=0">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://lh3.googleusercontent.com/pw/AP1GczMbhS60Qgu1cG2c3zpRgH5aRn0WCxVcHoak_bpMHiBJ2QAx3L7PAkLGvIQbCffGdiYgnjahH_KozAHS-dCrfkVuBYDMWKb4TiuC-8zOAAZqpZV5mn6hRwl9QTMY4joBWKoP9ygLK1jpk7JnfYIxtcsP=w406-h409-s-no-gm?authuser=0">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -54,18 +51,14 @@
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 
   <style>
-    /* ========================================================================= */
-    /* [PERSONALIZAÇÃO PRINCIPAL DE CORES GLOBAIS - CSS VARIABLES]              */
-    /* Modifique os códigos hexadecimais abaixo para mudar as cores em cascata:  */
-    /* ========================================================================= */
     :root { 
-      --bg-page: #505058;     /* Cor de fundo principal da tela de login        */
-      --bg-card: #212121;     /* Cor do card central de login e do menu lateral  */
-      --btn-color: #e42268;   /* Cor primária dos botões principais de ação     */
-      --btn-text: #ffffff;    /* Cor do texto dentro dos botões principais       */
-      --highlight: #e42268;   /* Cor de destaque das letras do logo (ex: PREVIA)*/
-      --input-bg: #e3ece9;    /* Cor de fundo das caixas de texto (inputs)       */
-      --input-text: #8fa29d;  /* Cor do texto digitado ou placeholder            */
+      --bg-page: #505058;
+      --bg-card: #212121;
+      --btn-color: #e42268;
+      --btn-text: #ffffff;
+      --highlight: #e42268;
+      --input-bg: #e3ece9;
+      --input-text: #8fa29d;
     }
 
     * { margin:0; padding:0; box-sizing:border-box; font-family:'Plus Jakarta Sans', sans-serif; }
@@ -81,16 +74,9 @@
     .cal-day-cell { height: 42px; display: flex; align-items: center; justify-content: center; border-radius: 12px; font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.2s; border: 1.5px solid transparent; }
     .cal-day-cell.vazio { cursor: default; background: transparent !important; border: none; }
     
-    /* ========================================================================= */
-    /* [PERSONALIZAÇÃO]: CORES DOS DIAS NO CALENDÁRIO                           */
-    /* ========================================================================= */
-    /* Dia livre / sem aula agendada: */
     .cal-day-cell.livre { background: #ecfdf5; color: #059669; border-color: #a7f3d0; }
-    /* Dia com aula ou ocupado: */
     .cal-day-cell.ocupado { background: #ffedd5; color: #ea580c; border-color: #fed7aa; }
-    /* Dia que tem aula marcada pelo aluno: */
     .cal-day-cell.minha-aula { background: #ffedd5; color: #ea580c; border: 2px solid #ea580c; font-weight: 800; }
-    /* Dia selecionado pelo clique: */
     .cal-day-cell.selecionado { outline: 2.5px solid var(--btn-color); font-weight: 800; transform: scale(1.04); }
 
     .tab-login-btn { cursor: pointer !important; z-index: 50 !important; position: relative !important; }
@@ -113,24 +99,13 @@
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
   </script>
-  <!-- ============================================================================== -->
 
   <!-- ================= TELA DE LOGIN ================= -->
-  <!-- [PERSONALIZAÇÃO DE CORES]: O fundo desta seção é definido por var(--bg-page) -->
   <div id="telaLogin" class="min-h-screen flex items-center justify-center p-4 relative z-10" style="background-color: var(--bg-page);">
-    
-    <!-- [PERSONALIZAÇÃO DE CORES]: O card de login usa var(--bg-card) -->
     <div class="w-full max-w-md p-8 rounded-3xl shadow-2xl flex flex-col items-center relative z-20" style="background-color: var(--bg-card);">
-      
-      <!-- [PERSONALIZAÇÃO DE TEXTO E COR]: Logotipo "CFC da Lu" -->
-      <!-- Troque "CFC" e "da Lu" caso queira outro nome. A cor do "IA" vem de var(--highlight) -->
       <div class="text-3xl font-black text-white tracking-wider mb-2">CFC<span style="color: var(--highlight);">da Lu</span></div>
-      
-      <!-- [PERSONALIZAÇÃO DE TEXTO]: Subtítulo da marca -->
       <p class="text-slate-300 text-xs font-semibold mb-6 text-center">Portal de Ensino Prático</p>
 
-      <!-- [PERSONALIZAÇÃO DE TEXTO E CORES]: Botões de Perfil (Aluno / Instrutor) -->
-      <!-- O botão ativo usa background-color: var(--btn-color). O inativo usa text-teal-300 -->
       <div class="w-full bg-black/40 p-1.5 rounded-2xl flex gap-1.5 mb-6 border border-white/10 relative z-30">
         <button id="btnTabAluno" type="button" onclick="trocarPerfilLogin('aluno')" class="tab-login-btn flex-1 py-3 rounded-xl text-xs font-black text-white shadow-lg transition select-none cursor-pointer" style="background-color: var(--btn-color);">Sou Aluno</button>
         <button id="btnTabInstrutor" type="button" onclick="trocarPerfilLogin('instrutor')" class="tab-login-btn flex-1 py-3 rounded-xl text-xs font-black text-teal-300 hover:text-white transition select-none bg-transparent cursor-pointer">Sou Instrutor</button>
@@ -138,19 +113,14 @@
 
       <form id="formLogin" onsubmit="realizarLogin(event)" class="w-full space-y-4 relative z-20">
         <div>
-          <!-- [PERSONALIZAÇÃO DE TEXTO]: Rótulo do primeiro campo -->
           <label class="block text-xs font-bold text-white uppercase mb-1" id="lblDoc">CPF ou Celular do Usuário</label>
-          <!-- [PERSONALIZAÇÃO DE CORES]: Fundo do input (var(--input-bg)) e texto (var(--input-text)) -->
           <input id="inputDoc" type="text" required placeholder="000.000.000-00 ou Celular" class="w-full h-12 px-4 rounded-xl font-semibold text-sm outline-none" style="background-color: var(--input-bg); color: var(--input-text);">
         </div>
         <div>
-          <!-- [PERSONALIZAÇÃO DE TEXTO]: Rótulo de Senha -->
           <label class="block text-xs font-bold text-white uppercase mb-1">Senha de Acesso</label>
           <input id="inputSenha" type="password" required placeholder="Digite sua senha" class="w-full h-12 px-4 rounded-xl font-semibold text-sm outline-none" style="background-color: var(--input-bg); color: var(--input-text);">
-          <!-- [PERSONALIZAÇÃO DE TEXTO]: Dica de senha exibida abaixo do campo -->
           <p id="txtDica" class="text-[11px] text-slate-400 mt-1">Dica: Por padrão, a sua senha são os 4 primeiros dígitos do CPF ou Celular.</p>
         </div>
-        <!-- [PERSONALIZAÇÃO DE TEXTO E COR]: Botão de envio "Acessar o Painel" -->
         <button type="submit" id="btnEntrar" class="w-full h-12 rounded-xl text-sm font-bold text-white shadow-lg mt-2 flex items-center justify-center gap-2 transition cursor-pointer" style="background-color: var(--btn-color);">Acessar o Painel</button>
       </form>
     </div>
@@ -158,21 +128,13 @@
 
   <!-- ================= PAINEL DO SISTEMA ================= -->
   <div id="telaDashboard" class="hidden min-h-screen flex flex-col md:flex-row relative z-10">
-    
-    <!-- ========================================================================= -->
-    <!-- [PERSONALIZAÇÃO]: SIDEBAR / MENU LATERAL                                  -->
-    <!-- Cor de fundo: var(--bg-card). Cor do texto: white                        -->
-    <!-- ========================================================================= -->
     <aside id="sidebarMenu" class="sidebar w-full md:w-64 flex flex-col justify-between p-6 border-r border-white/10 sidebar-transition flex-shrink-0" style="background-color: var(--bg-card); color: white;">
       <div class="space-y-6">
         <div class="flex items-center justify-between">
-          <!-- Logo no topo da sidebar -->
           <div class="text-xl font-black tracking-wider hide-collapsed">CFC<span style="color: var(--highlight);">da Lu</span></div>
-          <!-- Botão para encolher/expandir o menu -->
           <button type="button" onclick="alternarRecolherSidebar()" class="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-black" style="background-color: var(--btn-color);">&lt;&gt;</button>
         </div>
         <div class="p-3 bg-black/25 rounded-2xl border border-white/10 flex items-center gap-3">
-          <!-- Círculo com iniciais do usuário logado -->
           <div class="avatar-circle w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm text-white flex-shrink-0" style="background-color: var(--btn-color);" id="badgeIniciais">AS</div>
           <div class="overflow-hidden hide-collapsed">
             <div class="text-xs font-bold truncate" id="sideNomeUsuario">Carregando...</div>
@@ -180,7 +142,6 @@
           </div>
         </div>
         
-        <!-- [PERSONALIZAÇÃO DE TEXTO]: Itens de Menu do Aluno -->
         <nav id="menuNavAluno" class="space-y-1.5">
           <button type="button" id="btnNav_relatorio" onclick="navegarParaAba('relatorio')" class="menu-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-bold transition text-white" style="background-color: var(--btn-color);"><i data-lucide="layout-dashboard" class="w-4 h-4"></i><span class="hide-collapsed">Relatório Geral</span></button>
           <button type="button" id="btnNav_agendar" onclick="navegarParaAba('agendar')" class="menu-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-bold transition text-slate-300 hover:bg-white/5"><i data-lucide="calendar-plus" class="w-4 h-4"></i><span class="hide-collapsed">Agendar Aula</span></button>
@@ -188,7 +149,6 @@
           <button type="button" id="btnNav_ead" onclick="navegarParaAba('ead')" class="menu-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-bold transition text-slate-300 hover:bg-white/5"><i data-lucide="graduation-cap" class="w-4 h-4"></i><span class="hide-collapsed">Cursos & Aulas EAD</span></button>
         </nav>
         
-        <!-- [PERSONALIZAÇÃO DE TEXTO]: Itens de Menu do Instrutor -->
         <nav id="menuNavInstrutor" class="hidden space-y-1.5">
           <button type="button" id="btnNav_agenda_inst" onclick="navegarParaAba('agenda_inst')" class="menu-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-bold transition text-white" style="background-color: var(--btn-color);"><i data-lucide="calendar" class="w-4 h-4"></i><span class="hide-collapsed">Minha Agenda</span></button>
           <button type="button" id="btnNav_cadastro_aluno" onclick="navegarParaAba('cadastro_aluno')" class="menu-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-bold transition text-slate-300 hover:bg-white/5"><i data-lucide="user-plus" class="w-4 h-4"></i><span class="hide-collapsed">Cadastrar Novo Aluno</span></button>
@@ -196,31 +156,23 @@
         </nav>
       </div>
       <div class="space-y-2">
-        <!-- Botão Sair do Sistema (Cor: text-rose-400) -->
         <button type="button" onclick="fazerLogout()" class="w-full flex items-center gap-3 px-4 py-3 text-xs font-bold text-rose-400 hover:bg-rose-500/10 rounded-xl transition"><i data-lucide="log-out" class="w-4 h-4"></i><span class="hide-collapsed">Sair do Sistema</span></button>
       </div>
     </aside>
 
-    <!-- ÁREA PRINCIPAL DE CONTEÚDO (Fundo claro: bg-slate-50) -->
     <main class="flex-1 flex flex-col min-w-0 bg-slate-50 overflow-y-auto">
-      
-      <!-- CABEÇALHO SUPERIOR (HEADER) -->
       <header class="bg-white border-b border-slate-200 py-3.5 px-4 sm:px-8 flex flex-wrap justify-between items-center sticky top-0 z-30 gap-3">
         <div class="flex items-center gap-3">
-          <!-- Título da página atual atualizado dinamicamente -->
           <h2 id="topoTituloSecao" class="text-sm sm:text-base font-extrabold text-slate-900 uppercase truncate">MINHA AGENDA PRÁTICA</h2>
-          <!-- Botão "Atualizar" -->
           <button type="button" onclick="atualizarDadosGerais()" class="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 border border-slate-300 rounded-xl text-xs font-bold text-slate-700 flex items-center gap-1.5 transition"><i data-lucide="rotate-cw" class="w-3.5 h-3.5 text-teal-700"></i> Atualizar</button>
         </div>
         <div class="flex items-center gap-4">
           <div class="text-right hidden sm:block">
             <div class="text-[9px] text-slate-400 font-bold uppercase">Instrutor Vinculado</div>
-            <!-- Nome e veículo do instrutor no topo -->
             <div class="text-xs font-extrabold text-teal-700" id="topoNomeInstrutor">Amauri de Souza</div>
             <div class="text-[10px] text-slate-500 font-semibold" id="topoVeiculoInstrutor">Veículo: Ford Ka</div>
             <button type="button" onclick="abrirModalSaibaMais()" class="text-[10px] font-bold text-[var(--btn-color)] hover:underline block ml-auto mt-0.5">Saiba mais sobre seu instrutor</button>
           </div>
-          <!-- Badge de conexão (Cores: bg-emerald-50 text-emerald-700) -->
           <span class="px-3 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full text-[11px] font-bold">Servidor Conectado</span>
         </div>
       </header>
@@ -230,7 +182,6 @@
         <!-- ABA INSTRUTOR COM OS 3 CARDS NATIVOS -->
         <section id="aba_agenda_inst" class="space-y-6 hidden">
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full">
-            <!-- Card 1: Alunos Atendidos (Ícone em teal-700) -->
             <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
               <div class="p-3 bg-teal-50 text-teal-700 rounded-xl flex-shrink-0"><i data-lucide="users" class="w-6 h-6"></i></div>
               <div>
@@ -239,7 +190,6 @@
               </div>
             </div>
 
-            <!-- Card 2: Aulas Aplicadas (Ícone em emerald-700 e número emerald-600) -->
             <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
               <div class="p-3 bg-emerald-50 text-emerald-700 rounded-xl flex-shrink-0"><i data-lucide="check-circle-2" class="w-6 h-6"></i></div>
               <div>
@@ -248,7 +198,6 @@
               </div>
             </div>
 
-            <!-- Card 3: Aulas Agendadas (Ícone em orange-600 e número orange-500) -->
             <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
               <div class="p-3 bg-orange-50 text-orange-600 rounded-xl flex-shrink-0"><i data-lucide="calendar-clock" class="w-6 h-6"></i></div>
               <div>
@@ -258,14 +207,11 @@
             </div>
           </div>
 
-          <!-- CALENDÁRIO DO INSTRUTOR -->
           <div class="cal-card shadow-sm space-y-4">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 border-b pb-3">
               <div class="font-black text-sm text-slate-900 uppercase flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4 text-teal-700"></i><span id="calMesAnoInstrutor">Mês Atual</span></div>
-              <!-- Legendas de Cores do Calendário (bg-emerald-500 e bg-orange-500) -->
               <div class="flex items-center gap-4 text-xs font-bold"><span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-emerald-500"></span> Sem Aulas</span><span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-orange-500"></span> Com Aulas</span></div>
               <div class="flex gap-2">
-                <!-- Botão "Liberar Horários" usa a cor primária var(--btn-color) -->
                 <button type="button" onclick="abrirModalLiberarHorario()" class="px-3 py-1.5 text-white text-xs font-bold rounded-lg shadow transition" style="background-color: var(--btn-color);">➕ Liberar Horários</button>
                 <button type="button" onclick="carregarAgendaInstrutor(true)" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg transition">Ver Todas</button>
               </div>
@@ -287,16 +233,12 @@
 
         <!-- ABA RELATÓRIO DO ALUNO -->
         <section id="aba_relatorio" class="space-y-6 hidden">
-          <!-- Aviso de segurança (Cor de fundo: bg-amber-50, borda: border-amber-500, texto: text-amber-900) -->
           <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-2xl flex items-start gap-3"><i data-lucide="shield-alert" class="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5"></i><div><div class="text-xs font-bold text-amber-950 uppercase">Aviso de Segurança Crítico para o Aluno</div><div class="text-xs text-amber-900 mt-1">Para sua total segurança pessoal: <b>NUNCA entre em qualquer veículo de treinamento</b> sem antes validar visualmente as informações acima!</div></div></div>
           
-          <!-- Banner de boas-vindas em degradê (bg-gradient-to-r from-teal-50 to-emerald-50) -->
           <div class="p-8 rounded-3xl bg-gradient-to-r from-teal-50 to-emerald-50 border border-teal-100"><span class="px-3 py-1 bg-white text-xs font-bold uppercase rounded-full shadow-sm" style="color: var(--btn-color);">Portal de Aulas</span><h1 class="text-2xl font-extrabold text-slate-900 mt-2" id="boxBoasVindas">Olá, Aluno!</h1><p class="text-slate-600 text-sm mt-1">Gerencie suas aulas e acompanhe seu desenvolvimento prático em tempo real.</p></div>
           
-          <!-- Cards com dados cadastrais do Aluno -->
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm"><span class="text-[10px] font-bold text-slate-400 uppercase">Telefone</span><div class="text-sm font-bold text-slate-900 mt-1" id="boxTelefone">--</div></div><div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm"><span class="text-[10px] font-bold text-slate-400 uppercase">E-mail Cadastrado</span><div class="text-sm font-bold text-slate-900 mt-1 truncate" id="boxEmail">--</div></div><div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm"><span class="text-[10px] font-bold text-slate-400 uppercase">Endereço Registrado</span><div class="text-sm font-bold text-slate-900 mt-1 truncate" id="boxEndereco">--</div></div></div>
           
-          <!-- Card do Instrutor Vinculado -->
           <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3"><div class="flex items-center gap-2 text-sm font-bold text-slate-900 uppercase"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-600"></i> Instrutor Vinculado e Veículo Oficial</div><div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-slate-50 p-4 rounded-xl border border-slate-200 gap-4"><div><div class="text-xs font-bold text-slate-400 uppercase">Instrutor do Aluno</div><div class="text-sm font-bold text-slate-900" id="cardInstrutorNome">--</div><div class="text-xs text-teal-700 font-semibold mt-0.5" id="cardInstrutorCarro">Veículo cadastrado: --</div></div><button type="button" onclick="abrirModalSaibaMais()" class="px-4 py-2 bg-white border border-[var(--btn-color)] text-[var(--btn-color)] rounded-xl text-xs font-bold hover:bg-orange-50 transition">Saiba Mais / Ver Foto</button></div></div>
         </section>
 
@@ -318,7 +260,6 @@
             <div class="cal-grid-days" id="calDiasAlunoGrid"></div>
           </div>
 
-          <!-- BLOCO DE AULAS DO ALUNO NESSA DATA (Cores em tons de laranja/amber) -->
           <div id="boxMinhasAulasNesteDia" class="hidden bg-orange-50 p-5 rounded-2xl border border-orange-200 space-y-2">
             <div class="flex items-center justify-between">
               <div class="text-xs font-black uppercase text-orange-950 flex items-center gap-2">
@@ -363,12 +304,10 @@
             </div>
             <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
               <span class="text-xs font-bold uppercase text-slate-400 tracking-wider">AULAS CONCLUÍDAS</span>
-              <!-- Cor do contador de concluídas: text-emerald-600 -->
               <div class="text-3xl font-black text-emerald-600 mt-2" id="metricasConcluidas">0</div>
             </div>
             <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
               <span class="text-xs font-bold uppercase text-slate-400 tracking-wider">MÉDIA GERAL</span>
-              <!-- Cor do contador de média: text-orange-500 -->
               <div class="text-3xl font-black text-orange-500 mt-2" id="metricasMediaGeral">0.0</div>
             </div>
           </div>
@@ -398,7 +337,6 @@
               </div>
               <div><label class="block text-xs font-bold text-slate-700 uppercase mb-1">Endereço Residencial</label><input type="text" id="cadEndereco" class="w-full h-11 px-4 border border-slate-200 rounded-xl text-xs font-semibold outline-none focus:border-orange-500" placeholder="Rua, número, bairro e cidade"></div>
               <div><label class="block text-xs font-bold text-slate-700 uppercase mb-1">Instrutor Vinculado</label><input type="text" id="cadInstrutor" class="w-full h-11 px-4 border border-slate-200 rounded-xl text-xs font-semibold outline-none bg-slate-50" readonly></div>
-              <!-- Botão salvar aluno com var(--btn-color) -->
               <button type="submit" id="btnSalvarAluno" class="w-full py-3.5 text-white font-bold text-xs rounded-xl shadow-lg mt-4 flex items-center justify-center gap-2" style="background-color: var(--btn-color);"><span>💾 Salvar Aluno</span></button>
             </form>
           </div>
@@ -406,7 +344,6 @@
 
         <!-- ABA FERRAMENTAS & CURSOS (INSTRUTOR) -->
         <section id="aba_ferramentas" class="space-y-6 hidden">
-          <!-- DASHBOARD DE QUANTIDADES -->
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full">
             <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
               <div class="p-3 bg-teal-50 text-teal-700 rounded-xl flex-shrink-0"><i data-lucide="book-open" class="w-6 h-6"></i></div>
@@ -431,7 +368,6 @@
             </div>
           </div>
 
-          <!-- PESQUISAR CURSOS POR ALUNO VINCULADO -->
           <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-3">
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2 text-xs font-extrabold uppercase text-slate-800">
@@ -454,25 +390,23 @@
               <input type="text" id="filtroPesquisaCursos" oninput="filtrarMateriaisNaTela()" placeholder="Pesquisar por nome de curso ou categoria..." class="w-full h-10 pl-10 pr-4 rounded-xl border border-slate-200 text-xs font-semibold outline-none focus:border-orange-500">
             </div>
             <div class="flex flex-col sm:flex-row gap-2 w-full lg:w-auto">
-              <!-- Botão Criar Avaliação (Verde esmeralda: bg-emerald-600) -->
               <button type="button" onclick="abrirModalCriarAvaliacao()" class="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow transition flex items-center justify-center gap-2 cursor-pointer">
                 <i data-lucide="file-plus-2" class="w-4 h-4"></i>
                 <span>Criar Avaliação / Critérios</span>
               </button>
-              <!-- Botão Novo Curso usa var(--btn-color) -->
-              <button type="button" onclick="abrirModalCadastrarMaterial()" class="px-4 py-2.5 text-white font-bold text-xs rounded-xl shadow transition flex items-center justify-center gap-2 cursor-pointer" style="background-color: var(--btn-color);">
+              
+              <!-- [EXCLUSIVO ADMIN MASTER]: Botão Cadastrar Novo Curso / Ferramenta -->
+              <button type="button" id="btnNovoCursoMaterial" onclick="abrirModalCadastrarMaterial()" class="hidden px-4 py-2.5 text-white font-bold text-xs rounded-xl shadow transition flex items-center justify-center gap-2 cursor-pointer" style="background-color: var(--btn-color);">
                 <i data-lucide="plus-circle" class="w-4 h-4"></i>
                 <span>Novo Curso / Ferramenta</span>
               </button>
             </div>
           </div>
 
-          <!-- GRID DE CARDS -->
           <div id="gridFerramentasCards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="col-span-full p-8 text-center text-slate-400">Carregando ferramentas e cursos...</div>
           </div>
 
-          <!-- PLAYER DE VISUALIZAÇÃO -->
           <div id="boxPlayerFerramenta" class="hidden space-y-4 bg-white p-6 rounded-3xl border border-slate-200 shadow-sm">
             <div class="flex justify-between items-center border-b pb-3">
               <h4 id="tituloPlayerFerramenta" class="text-sm font-extrabold text-slate-900">Visualização de Conteúdo</h4>
@@ -488,14 +422,11 @@
     </main>
   </div>
 
-  <!-- ================= BANNER FLUTUANTE DE INSTALAÇÃO DO APP (LOGIN E PAINEL) ================= -->
   <div id="bannerInstalacaoApp" class="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-md bg-black text-white p-4 rounded-2xl shadow-2xl border border-white/10 hidden flex-col sm:flex-row items-center justify-between gap-3 transition-all duration-300">
-    <!-- [PERSONALIZAÇÃO DE TEXTO]: Chamada do Banner PWA -->
     <div class="text-xs font-bold text-center sm:text-left">
       Deseja instalar o aplicativo oficial para acesso rápido?
     </div>
     <div class="flex items-center gap-3 w-full sm:w-auto justify-center">
-      <!-- Botão instalar app (bg-emerald-500) -->
       <button type="button" onclick="acionarInstalacaoApp()" class="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-black font-extrabold text-xs rounded-xl shadow transition cursor-pointer flex-1 sm:flex-none text-center">
         Instalar Aplicativo
       </button>
@@ -531,9 +462,7 @@
             </button>
           </div>
 
-          <div id="containerListaCriteriosNovos" class="space-y-2 max-h-52 overflow-y-auto p-2 border border-slate-100 rounded-2xl bg-slate-50">
-            <!-- Linhas dinâmicas geradas via JavaScript -->
-          </div>
+          <div id="containerListaCriteriosNovos" class="space-y-2 max-h-52 overflow-y-auto p-2 border border-slate-100 rounded-2xl bg-slate-50"></div>
         </div>
 
         <div class="bg-amber-50 p-3 rounded-2xl border border-amber-200 text-[11px] text-amber-900 leading-relaxed">
@@ -542,7 +471,6 @@
 
         <div class="flex justify-end gap-2 pt-2 border-t">
           <button type="button" onclick="fecharModalCriarAvaliacao()" class="px-4 py-2 text-xs font-bold text-slate-500 hover:bg-slate-50 rounded-xl">Cancelar</button>
-          <!-- Botão gravar avaliação (bg-emerald-600) -->
           <button type="submit" id="btnSalvarNovaAvaliacao" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow-lg transition">
             💾 Gravar Avaliação no Firebase
           </button>
@@ -551,11 +479,11 @@
     </div>
   </div>
 
-  <!-- MODAL: CADASTRAR NOVO CURSO / FERRAMENTA EDUCACIONAL -->
+  <!-- MODAL: CADASTRAR NOVO CURSO / FERRAMENTA EDUCACIONAL (EXCLUSIVO MASTER) -->
   <div id="modalCadastrarMaterial" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-200 p-4">
     <div class="bg-white rounded-3xl shadow-2xl max-w-lg w-full p-6 relative transform scale-95 transition-transform duration-200 space-y-4 max-h-[90vh] overflow-y-auto">
       <div class="flex justify-between items-center border-b pb-3">
-        <h3 class="text-sm font-extrabold uppercase tracking-wide text-slate-800">Cadastrar Novo Curso ou Ferramenta</h3>
+        <h3 class="text-sm font-extrabold uppercase tracking-wide text-slate-800">Cadastrar Novo Curso ou Ferramenta (Master)</h3>
         <button type="button" onclick="fecharModalCadastrarMaterial()" class="text-slate-400 hover:text-slate-600"><i data-lucide="x" class="w-5 h-5"></i></button>
       </div>
       <form onsubmit="salvarNovoMaterial(event)" class="space-y-4">
@@ -569,12 +497,19 @@
             <input type="text" id="matCategoria" required value="Teórico" placeholder="Ex: Teórico, Simulador, Baliza" class="w-full h-11 px-3 border border-slate-200 rounded-xl text-xs font-semibold outline-none focus:border-orange-500">
           </div>
           <div>
-            <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Acesso Padrão Inicial</label>
+            <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Acesso Padrão Alunos</label>
             <select id="matAcessoInicial" class="w-full h-11 px-3 border border-slate-200 rounded-xl text-xs font-semibold outline-none">
-              <option value="todos">Liberado para Todos</option>
+              <option value="todos">Liberado para Todos os Alunos</option>
               <option value="especifico">Matricular Alunos Manualmente</option>
             </select>
           </div>
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Acesso Inicial para Instrutores</label>
+          <select id="matAcessoInstrutoresInicial" class="w-full h-11 px-3 border border-slate-200 rounded-xl text-xs font-semibold outline-none">
+            <option value="todos">Liberado para Todos os Instrutores</option>
+            <option value="especifico">Liberar Instrutores Manualmente</option>
+          </select>
         </div>
         <div>
           <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Breve Descrição</label>
@@ -593,7 +528,7 @@
     </div>
   </div>
 
-  <!-- MODAL: GERENCIAR MATRÍCULAS DO CURSO COM BUSCA POR NOME -->
+  <!-- MODAL: GERENCIAR MATRÍCULAS DO CURSO (ALUNOS) -->
   <div id="modalGerenciarMatriculas" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-200 p-4">
     <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full p-6 relative transform scale-95 transition-transform duration-200 space-y-4 max-h-[90vh] overflow-y-auto">
       <div class="flex justify-between items-start border-b pb-3">
@@ -630,6 +565,45 @@
     </div>
   </div>
 
+  <!-- MODAL: LIBERAR CURSOS PARA INSTRUTORES (EXCLUSIVO MASTER) -->
+  <div id="modalMatriculasInstrutores" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-200 p-4">
+    <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full p-6 relative transform scale-95 transition-transform duration-200 space-y-4 max-h-[90vh] overflow-y-auto">
+      <div class="flex justify-between items-start border-b pb-3">
+        <div>
+          <h3 class="text-sm font-extrabold uppercase tracking-wide text-slate-800">CADASTRAR INSTRUTOR NO CURSO</h3>
+          <p id="matInstCursoTituloSub" class="text-xs text-teal-700 font-semibold mt-0.5">Selecione os instrutores autorizados</p>
+        </div>
+        <button type="button" onclick="fecharModalLiberarParaInstrutores()" class="text-slate-400 hover:text-slate-600"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+      
+      <input type="hidden" id="matDocIdCursoInstrutor">
+
+      <div class="flex items-center gap-2 p-3 bg-teal-50 border border-teal-200 rounded-xl">
+        <input type="checkbox" id="chkTodosInstrutores" onchange="alternarMarcarTodosInstrutores(this.checked)" class="w-4 h-4 text-teal-600 rounded cursor-pointer">
+        <label for="chkTodosInstrutores" class="text-xs font-bold text-teal-950 cursor-pointer">Liberar este curso para TODOS os instrutores</label>
+      </div>
+
+      <div class="space-y-2">
+        <div class="flex justify-between items-center">
+          <div class="text-[10px] font-bold uppercase text-slate-400">SELECIONE OS INSTRUTORES:</div>
+          <span id="contagemInstrutoresFiltrados" class="text-[10px] font-bold text-slate-500"></span>
+        </div>
+        <div class="relative w-full">
+          <i data-lucide="search" class="w-3.5 h-3.5 absolute left-3 top-2.5 text-slate-400"></i>
+          <input type="text" id="filtroInstrutorNoModal" oninput="filtrarInstrutoresNoModal()" placeholder="Buscar instrutor por nome..." class="w-full h-9 pl-9 pr-3 rounded-lg border border-slate-200 text-xs font-semibold outline-none focus:border-teal-700">
+        </div>
+        <div id="listaInstrutoresCheckboxes" class="max-h-56 overflow-y-auto border border-slate-200 rounded-xl p-2 space-y-1 divide-y divide-slate-100">
+          <div class="p-3 text-center text-xs text-slate-400">Carregando instrutores...</div>
+        </div>
+      </div>
+
+      <div class="flex justify-end gap-2 pt-3 border-t">
+        <button type="button" onclick="fecharModalLiberarParaInstrutores()" class="px-4 py-2 text-xs font-bold text-slate-500 hover:bg-slate-50 rounded-xl">Cancelar</button>
+        <button type="button" id="btnSalvarMatriculasInstrutores" onclick="salvarLiberacaoInstrutoresNoFirebase()" class="px-5 py-2.5 text-white font-bold text-xs rounded-xl shadow-lg" style="background-color: var(--btn-color);">Salvar Liberação</button>
+      </div>
+    </div>
+  </div>
+
   <!-- MODAL: SAIBA MAIS SOBRE O INSTRUTOR -->
   <div id="modalSaibaMaisInstrutor" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-200 p-4">
     <div class="bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 relative transform scale-95 transition-transform duration-200 max-h-[90vh] overflow-y-auto">
@@ -641,7 +615,6 @@
           <div id="modalInstAvatarFallback" class="text-teal-700"><i data-lucide="user-round" class="w-16 h-16"></i></div>
         </div>
         <div>
-          <!-- [PERSONALIZAÇÃO DE TEXTO]: Nome e Veículo do Instrutor no Modal -->
           <h4 id="modalInstNome" class="text-lg font-bold text-slate-900">Amauri de Souza</h4>
           <span id="modalInstVeiculo" class="inline-block text-xs font-semibold text-teal-800 bg-teal-50 border border-teal-100 rounded-full px-3 py-1 mt-1">🚗 Veículo: Ford Ka</span>
         </div>
@@ -654,7 +627,7 @@
     </div>
   </div>
 
-  <!-- MODAL: LIBERAR HORÁRIO (INDIVIDUAL E DIA TODO) -->
+  <!-- MODAL: LIBERAR HORÁRIO -->
   <div id="modalLiberarHorario" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-200 p-4">
     <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full p-6 relative transform scale-95 transition-transform duration-200 max-h-[90vh] overflow-y-auto">
       <div class="flex justify-between items-center border-b pb-3 mb-4"><h3 class="text-sm font-extrabold uppercase tracking-wide text-slate-800">Liberar Horário na Agenda</h3><button type="button" onclick="fecharModalLiberarHorario()" class="text-slate-400 hover:text-slate-600"><i data-lucide="x" class="w-5 h-5"></i></button></div>
@@ -693,7 +666,7 @@
     </div>
   </div>
 
-  <!-- MODAL: FICHA DE AVALIAÇÃO PRÁTICA (VISUALIZAÇÃO) -->
+  <!-- MODAL: FICHA DE AVALIAÇÃO PRÁTICA -->
   <div id="modalFichaAvaliacao" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-200 p-4">
     <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative transform scale-95 transition-transform duration-200 max-h-[90vh] overflow-y-auto flex flex-col space-y-6">
       <div class="flex justify-between items-start border-b pb-4"><div class="flex items-center gap-3"><div class="p-2.5 bg-emerald-50 text-emerald-600 rounded-2xl border border-emerald-100"><i data-lucide="file-spreadsheet" class="w-6 h-6"></i></div><div><h3 class="text-lg font-black text-slate-900">Ficha de Avaliação Prática</h3><p id="fichaSubtitulo" class="text-xs text-slate-500 font-semibold mt-0.5">Aula: -- • Data: --</p></div></div><button type="button" onclick="fecharModalFicha()" class="text-slate-400 hover:text-slate-600 p-1.5"><i data-lucide="x" class="w-5 h-5"></i></button></div>
@@ -737,6 +710,7 @@
   <script>
     let perfilAtual = 'aluno';
     let usuarioLogado = null;
+    let ehAdminMaster = false;
     let abaAtivaAtual = 'relatorio';
     let todasAulasInstrutor = [];
     let diasComAulasInstrutor = [];
@@ -750,17 +724,15 @@
     
     let todosMateriaisInstrutor = [];
     let todosAlunosCadastrados = [];
+    let todosInstrutoresCadastrados = [];
     let materialSelecionadoParaMatricula = null;
     let mapaSelecaoTemporariaMatriculas = {};
+    let mapaSelecaoTemporariaInstrutores = {};
 
     let deferredPromptApp = null;
 
     const ITENS_COMPORTAMENTAIS_PADRAO = ["Ansioso", "Atento", "Seguro", "Condução defensiva", "Segue as orientações do instrutor"];
 
-    /* ========================================================================= */
-    /* [PERSONALIZAÇÃO]: TEXTOS E CORES DINÂMICAS DE LOGIN                      */
-    /* Modifique aqui se desejar mudar os rótulos e placeholders dinâmicos:       */
-    /* ========================================================================= */
     function trocarPerfilLogin(perfil) {
       perfilAtual = perfil;
       const btnAluno = document.getElementById('btnTabAluno');
@@ -775,7 +747,6 @@
         btnInst.style.setProperty('background-color', 'transparent', 'important');
         btnInst.className = 'tab-login-btn flex-1 py-3 rounded-xl text-xs font-black text-teal-300 hover:text-white transition select-none bg-transparent cursor-pointer';
         
-        // Textos para o perfil Aluno:
         lblDoc.innerText = 'CPF ou Celular do Usuário';
         txtDica.innerText = 'Dica: Por padrão, a sua senha são os 4 primeiros dígitos do CPF ou Celular.';
         inputDoc.placeholder = '000.000.000-00 ou Celular';
@@ -785,14 +756,12 @@
         btnAluno.style.setProperty('background-color', 'transparent', 'important');
         btnAluno.className = 'tab-login-btn flex-1 py-3 rounded-xl text-xs font-black text-teal-300 hover:text-white transition select-none bg-transparent cursor-pointer';
         
-        // Textos para o perfil Instrutor:
         lblDoc.innerText = 'CPF ou Celular do Instrutor';
         txtDica.innerText = 'Dica: Digite sua senha cadastrada no banco.';
         inputDoc.placeholder = 'Digite seu CPF ou Celular';
       }
     }
 
-    /* ==================== [FIREBASE: LOGIN] ==================== */
     async function realizarLogin(e) {
       e.preventDefault();
       const doc = document.getElementById('inputDoc').value.trim();
@@ -802,10 +771,17 @@
       btn.disabled = true;
 
       try {
-        const query = await db.collection("usuarios")
+        let query = await db.collection("usuarios")
           .where("cpf", "==", doc)
           .where("tipo", "==", perfilAtual)
           .get();
+
+        if (query.empty && perfilAtual === 'instrutor') {
+          query = await db.collection("usuarios")
+            .where("cpf", "==", doc)
+            .where("tipo", "==", "admin")
+            .get();
+        }
 
         if (query.empty) {
           alert('Usuário não localizado. Verifique se digitou o CPF ou Celular correto e selecionou a aba correta.');
@@ -822,6 +798,8 @@
         }
 
         usuarioLogado = dados;
+        ehAdminMaster = (usuarioLogado.adminMaster === true || usuarioLogado.adminMaster === 'true' || usuarioLogado.tipo === 'admin' || usuarioLogado.funcao === 'master');
+
         document.getElementById('telaLogin').classList.add('hidden');
         document.getElementById('telaDashboard').classList.remove('hidden');
 
@@ -845,10 +823,18 @@
         } else {
           document.getElementById('menuNavAluno').classList.add('hidden');
           document.getElementById('menuNavInstrutor').classList.remove('hidden');
-          document.getElementById('sideStatusUsuario').innerText = '● Instrutor';
+          document.getElementById('sideStatusUsuario').innerText = ehAdminMaster ? '● Admin Master' : '● Instrutor';
           document.getElementById('topoNomeInstrutor').innerText = usuarioLogado.nome;
           document.getElementById('topoVeiculoInstrutor').innerText = 'Veículo: ' + (usuarioLogado.veiculo || 'Ford Ka');
           document.getElementById('cadInstrutor').value = usuarioLogado.nome;
+
+          const btnCadastrarCurso = document.getElementById('btnNovoCursoMaterial');
+          if (ehAdminMaster) {
+            if (btnCadastrarCurso) btnCadastrarCurso.classList.remove('hidden');
+          } else {
+            if (btnCadastrarCurso) btnCadastrarCurso.classList.add('hidden');
+          }
+
           navegarParaAba('agenda_inst');
         }
       } catch (err) {
@@ -860,10 +846,6 @@
       }
     }
 
-    /* ========================================================================= */
-    /* [PERSONALIZAÇÃO]: TÍTULOS DAS SEÇÕES NO CABEÇALHO SUPERIOR                */
-    /* Altere os textos abaixo para modificar o que aparece no topo de cada tela:*/
-    /* ========================================================================= */
     function navegarParaAba(nomeAba) {
       abaAtivaAtual = nomeAba;
       const abas = ['relatorio', 'agendar', 'historico', 'ead', 'agenda_inst', 'cadastro_aluno', 'ferramentas'];
@@ -919,7 +901,6 @@
 
     function alternarRecolherSidebar() { document.getElementById('sidebarMenu').classList.toggle('collapsed'); }
 
-    /* ==================== [FIREBASE: AGENDA DO INSTRUTOR] ==================== */
     async function carregarAgendaInstrutor(limparFiltro = false) {
       const corpo = document.getElementById('tabelaAgendaInstrutorCorpo');
       corpo.innerHTML = '<tr><td colspan="5" class="p-4 text-center text-slate-400">Carregando dados em tempo real...</td></tr>';
@@ -1004,7 +985,6 @@
       if (lista.length === 0) { corpo.innerHTML = '<tr><td colspan="5" class="p-4 text-center text-slate-400">Nenhuma aula agendada para esta data.</td></tr>'; return; }
       lista.forEach(a => {
         const tr = document.createElement('tr');
-        // Badges: Verde (concluída) ou Laranja (pendente):
         const badgeCor = a.ehConcluida ? 'bg-emerald-50 text-emerald-700 border-emerald-200' : 'bg-orange-50 text-orange-600 border-orange-200 font-black';
         const acaoBtn = a.ehConcluida 
           ? `<button type="button" onclick="visualizarFichaAula('${encodeURIComponent(JSON.stringify(a))}')" class="px-3 py-1 bg-white hover:bg-slate-50 border border-slate-200 text-teal-700 rounded-lg font-bold text-xs flex items-center gap-1.5"><i data-lucide="eye" class="w-3.5 h-3.5"></i> Ver Ficha</button>`
@@ -1046,7 +1026,6 @@
       }
     }
 
-    /* ==================== [FIREBASE: GRAVAR HORÁRIO AVULSO] ==================== */
     async function salvarHorarioDisponivel(e) {
       e.preventDefault();
       const btn = document.getElementById('btnSalvarHorario');
@@ -1072,7 +1051,6 @@
       } catch (err) { alert('Erro ao salvar horário: ' + err.message); } finally { btn.innerText = 'Salvar Horário'; btn.disabled = false; }
     }
 
-    /* ==================== [FIREBASE: GRAVAR DIA TODO] ==================== */
     async function salvarDiaTodoDisponivel(e) {
       e.preventDefault();
       const btn = document.getElementById('btnSalvarDiaTodo');
@@ -1082,7 +1060,6 @@
         const dataFormatada = `${dia}/${mes}/${ano}`;
         const local = document.getElementById('dtLocal').value;
 
-        // [PERSONALIZAÇÃO]: Grade de horários padrão gerada no dia todo
         const gradeHorarios = [
           { inicio: "08:00", fim: "08:50", titulo: "Baliza / Prática" },
           { inicio: "09:00", fim: "09:50", titulo: "Trânsito Urbano" },
@@ -1116,7 +1093,6 @@
       } catch (err) { alert('Erro ao gerar grade: ' + err.message); } finally { btn.innerText = '⚡ Gerar Grade do Dia Todo'; btn.disabled = false; }
     }
 
-    /* ==================== [FIREBASE: VAGAS E AULAS AGENDADAS (ALUNO)] ==================== */
     async function carregarVagasAluno(limparFiltro = false) {
       const corpo = document.getElementById('tabelaVagasAlunoCorpo');
       corpo.innerHTML = '<tr><td colspan="5" class="p-4 text-center text-slate-400">Buscando horários disponíveis...</td></tr>';
@@ -1181,11 +1157,8 @@
         const temVagaLivre = diasLivresAluno.includes(dStr);
 
         let classeCss = 'vazio text-slate-300';
-        if (temMinhaAula) {
-          classeCss = 'minha-aula';
-        } else if (temVagaLivre) {
-          classeCss = 'livre';
-        }
+        if (temMinhaAula) classeCss = 'minha-aula';
+        else if (temVagaLivre) classeCss = 'livre';
 
         const cell = document.createElement('div');
         cell.className = 'cal-day-cell ' + classeCss;
@@ -1197,11 +1170,8 @@
             cell.classList.add('selecionado');
             
             const aulasAlunoHoje = minhasAulasAluno.filter(a => a.data === dStr);
-            if (aulasAlunoHoje.length > 0) {
-              mostrarBoxMinhasAulasNesteDia(dStr, aulasAlunoHoje);
-            } else {
-              fecharBoxMinhasAulasDia();
-            }
+            if (aulasAlunoHoje.length > 0) mostrarBoxMinhasAulasNesteDia(dStr, aulasAlunoHoje);
+            else fecharBoxMinhasAulasDia();
 
             document.getElementById('tituloVagasAluno').innerText = 'HORÁRIOS DISPONÍVEIS EM ' + dStr;
             renderizarTabelaVagasAluno(todasVagasAluno.filter(v => v.data === dStr));
@@ -1250,7 +1220,6 @@
       });
     }
 
-    /* ==================== [FIREBASE: MODELOS DE AULA] ==================== */
     async function abrirConfirmacaoAgendamento(vagaEncoded) {
       vagaSelecionadaAluno = JSON.parse(decodeURIComponent(vagaEncoded));
       document.getElementById('txtResumoVaga').innerHTML = 'Data: <b>' + vagaSelecionadaAluno.data + '</b> (' + vagaSelecionadaAluno.inicio + ' às ' + vagaSelecionadaAluno.fim + ')<br>Local: ' + vagaSelecionadaAluno.local + '<br>Instrutor: <b>' + vagaSelecionadaAluno.instrutor + '</b>';
@@ -1281,14 +1250,12 @@
       setTimeout(() => m.classList.add('hidden'), 200);
     }
 
-    /* ==================== [FIREBASE: AGENDAMENTO DO ALUNO] ==================== */
     async function confirmarAgendamentoPeloAluno(e) {
       e.preventDefault();
       const btn = document.getElementById('btnConfirmarVaga');
       btn.innerText = 'Agendando...'; btn.disabled = true;
       try {
         const batch = db.batch();
-
         const refVaga = db.collection("aulas_disponiveis").doc(vagaSelecionadaAluno.id);
         batch.delete(refVaga);
 
@@ -1317,7 +1284,6 @@
       } catch (err) { alert('Erro ao agendar aula: ' + err.message); } finally { btn.innerText = 'Confirmar e Salvar no Histórico'; btn.disabled = false; }
     }
 
-    /* ==================== [FIREBASE: HISTÓRICO DO ALUNO] ==================== */
     async function carregarHistoricoAluno() {
       const corpo = document.getElementById('tabelaHistoricoAlunoCorpo');
       corpo.innerHTML = '<tr><td colspan="5" class="p-6 text-center text-slate-400">Carregando histórico completo...</td></tr>';
@@ -1362,7 +1328,6 @@
       } catch (e) { corpo.innerHTML = '<tr><td colspan="5" class="p-6 text-center text-rose-500">Erro ao carregar histórico.</td></tr>'; }
     }
 
-    /* ==================== [FIREBASE: CURSOS EAD (ALUNO)] ==================== */
     async function carregarCursosEAD() {
       const grid = document.getElementById('gridCursosEADCards');
       grid.innerHTML = '<div class="col-span-full p-8 text-center text-slate-400">Buscando cursos matriculados...</div>';
@@ -1385,9 +1350,7 @@
             estaMatriculado = (c.destinadoA === usuarioLogado.cpf || c.destinadoA === usuarioLogado.telefone);
           }
 
-          if (estaMatriculado) {
-            cursosVisiveis.push(c);
-          }
+          if (estaMatriculado) cursosVisiveis.push(c);
         });
 
         if (cursosVisiveis.length === 0) {
@@ -1418,7 +1381,6 @@
       document.getElementById('gridCursosEADCards').classList.remove('hidden');
     }
 
-    /* ==================== [FIREBASE: QUESTÕES E AVALIAÇÃO] ==================== */
     async function visualizarFichaAula(aulaEncoded) {
       const h = JSON.parse(decodeURIComponent(aulaEncoded));
       document.getElementById('fichaSubtitulo').innerText = `Aula: ${h.titulo} • Data: ${h.data}`;
@@ -1549,7 +1511,6 @@
       fecharModalIncorporarEvidencia();
     }
 
-    /* ==================== [FIREBASE: GRAVAR AVALIAÇÃO PRÁTICA] ==================== */
     async function enviarAvaliacaoPratica(e) {
       e.preventDefault();
       const btn = document.getElementById('btnSalvarAvaliacao');
@@ -1573,10 +1534,6 @@
       } catch (err) { alert('Erro ao gravar avaliação: ' + err.message); } finally { btn.innerText = 'Concluir e Registrar Aula'; btn.disabled = false; }
     }
 
-    /* ========================================================================= */
-    /* [PERSONALIZAÇÃO]: MENSAGEM DO WHATSAPP                                    */
-    /* Altere o formato do texto disparado para o WhatsApp:                     */
-    /* ========================================================================= */
     function compartilharWhatsApp(aulaEncoded) {
       const a = JSON.parse(decodeURIComponent(aulaEncoded));
       let evTxt = '';
@@ -1586,16 +1543,11 @@
       window.open(`https://api.whatsapp.com/send?phone=${tel}&text=${encodeURIComponent(msg)}`, '_blank');
     }
 
-    /* ========================================================================= */
-    /* [PERSONALIZAÇÃO]: CORES E TÍTULOS DO PDF GERADO                           */
-    /* Altere as cores RGB e fontes usadas no documento PDF:                     */
-    /* ========================================================================= */
     function exportarFichaParaPdf(aula, detalhes) {
       try {
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF({ unit: 'pt', format: 'a4' });
         
-        // Cabeçalho escuro do PDF (RGB 4, 46, 42):
         doc.setFillColor(4, 46, 42); 
         doc.rect(0, 0, 595, 60, 'F');
         doc.setTextColor(255, 255, 255); 
@@ -1609,7 +1561,6 @@
         doc.text(`Data: ${aula.data} (${aula.inicio} às ${aula.fim})`, 40, 126);
         doc.text(`Instrutor: ${aula.instrutor || 'Amauri de Souza'}`, 40, 144);
         
-        // Caixa de destaque da nota (RGB 240, 90, 36):
         doc.setFillColor(240, 90, 36); 
         doc.roundedRect(420, 80, 135, 65, 8, 8, 'F');
         doc.setTextColor(255, 255, 255); 
@@ -1633,7 +1584,6 @@
       } catch (err) { compartilharWhatsApp(encodeURIComponent(JSON.stringify(aula))); }
     }
 
-    /* ==================== [FIREBASE: FERRAMENTAS & CURSOS (INSTRUTOR)] ==================== */
     async function carregarMateriaisEducacionaisInstrutor() {
       const grid = document.getElementById('gridFerramentasCards');
       grid.innerHTML = '<div class="col-span-full p-8 text-center text-slate-400">Carregando ferramentas e cursos...</div>';
@@ -1651,6 +1601,18 @@
           todosAlunosCadastrados.push(al);
         });
 
+        if (ehAdminMaster) {
+          const snapInst = await db.collection("usuarios")
+            .where("tipo", "in", ["instrutor", "admin"])
+            .get();
+          todosInstrutoresCadastrados = [];
+          snapInst.forEach(doc => {
+            const ins = doc.data();
+            ins.id = doc.id;
+            todosInstrutoresCadastrados.push(ins);
+          });
+        }
+
         const snapCursos = await db.collection("cursos_ead").get();
         todosMateriaisInstrutor = [];
         let totalMatriculas = 0;
@@ -1659,6 +1621,18 @@
         snapCursos.forEach(doc => {
           const item = doc.data();
           item.id = doc.id;
+
+          if (!ehAdminMaster) {
+            let liberadoParaInstrutor = false;
+            if (!item.destinadoInstrutores || item.destinadoInstrutores === 'todos' || item.destinadoInstrutores === '') {
+              liberadoParaInstrutor = true;
+            } else if (Array.isArray(item.destinadoInstrutores)) {
+              liberadoParaInstrutor = item.destinadoInstrutores.includes(usuarioLogado.cpf) || item.destinadoInstrutores.includes(usuarioLogado.nome);
+            } else if (typeof item.destinadoInstrutores === 'string') {
+              liberadoParaInstrutor = (item.destinadoInstrutores === usuarioLogado.cpf || item.destinadoInstrutores === usuarioLogado.nome);
+            }
+            if (!liberadoParaInstrutor) return;
+          }
 
           if (!item.destinadoA || item.destinadoA === 'todos' || item.destinadoA === '') {
             totalAbertos++;
@@ -1691,7 +1665,7 @@
       const grid = document.getElementById('gridFerramentasCards');
       grid.innerHTML = '';
       if (lista.length === 0) {
-        grid.innerHTML = '<div class="col-span-full p-8 text-center text-slate-400">Nenhum curso ou ferramenta encontrado.</div>';
+        grid.innerHTML = '<div class="col-span-full p-8 text-center text-slate-400">Nenhum curso ou ferramenta disponível no momento.</div>';
         return;
       }
 
@@ -1706,6 +1680,52 @@
           textoAlunos = `<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-orange-50 text-orange-600 border border-orange-200">1 Aluno Matriculado</span>`;
         }
 
+        let tagInstrutores = '';
+        if (ehAdminMaster) {
+          if (!item.destinadoInstrutores || item.destinadoInstrutores === 'todos' || item.destinadoInstrutores === '') {
+            tagInstrutores = `<div class="mt-1"><span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-teal-50 text-teal-800 border border-teal-200">Instrutores: Liberado a Todos</span></div>`;
+          } else {
+            const qtdInst = Array.isArray(item.destinadoInstrutores) ? item.destinadoInstrutores.length : 1;
+            tagInstrutores = `<div class="mt-1"><span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-purple-50 text-purple-700 border border-purple-200">Instrutores Liberados: ${qtdInst}</span></div>`;
+          }
+        }
+
+        // Botões de ação no card (se for Admin Master exibe também Cadastrar Instrutor)
+        let botoesAcaoHtml = '';
+        if (ehAdminMaster) {
+          botoesAcaoHtml = `
+            <div class="p-5 pt-0 space-y-2">
+              <div class="grid grid-cols-2 gap-2">
+                <button type="button" onclick="abrirPlayerFerramenta('${encodeURIComponent(JSON.stringify(item))}')" class="py-2 rounded-xl text-slate-700 bg-slate-100 hover:bg-slate-200 font-bold text-xs transition flex items-center justify-center gap-1 cursor-pointer">
+                  <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                  <span>Testar</span>
+                </button>
+                <button type="button" onclick="abrirModalMatriculas('${item.id}')" class="py-2 rounded-xl text-white font-bold text-xs shadow-md transition flex items-center justify-center gap-1 cursor-pointer" style="background-color: var(--btn-color);">
+                  <i data-lucide="users" class="w-3.5 h-3.5"></i>
+                  <span>Alunos</span>
+                </button>
+              </div>
+              <button type="button" onclick="abrirModalLiberarParaInstrutoresDireto('${item.id}')" class="w-full py-2 bg-teal-700 hover:bg-teal-800 text-white font-bold text-xs rounded-xl shadow-md transition flex items-center justify-center gap-1.5 cursor-pointer">
+                <i data-lucide="user-check" class="w-3.5 h-3.5"></i>
+                <span>Cadastrar Instrutor</span>
+              </button>
+            </div>
+          `;
+        } else {
+          botoesAcaoHtml = `
+            <div class="p-5 pt-0 grid grid-cols-2 gap-2">
+              <button type="button" onclick="abrirPlayerFerramenta('${encodeURIComponent(JSON.stringify(item))}')" class="py-2.5 rounded-xl text-slate-700 bg-slate-100 hover:bg-slate-200 font-bold text-xs transition flex items-center justify-center gap-1.5 cursor-pointer">
+                <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                <span>Testar</span>
+              </button>
+              <button type="button" onclick="abrirModalMatriculas('${item.id}')" class="py-2.5 rounded-xl text-white font-bold text-xs shadow-md transition flex items-center justify-center gap-1.5 cursor-pointer" style="background-color: var(--btn-color);">
+                <i data-lucide="users" class="w-3.5 h-3.5"></i>
+                <span>Alunos</span>
+              </button>
+            </div>
+          `;
+        }
+
         const card = document.createElement('div');
         card.className = 'bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between';
         card.innerHTML = `
@@ -1718,18 +1738,10 @@
               <h4 class="font-extrabold text-slate-900 text-sm line-clamp-1">${item.titulo}</h4>
               <p class="text-xs text-slate-500 line-clamp-2">${item.descricao}</p>
               <div class="pt-1">${textoAlunos}</div>
+              ${tagInstrutores}
             </div>
           </div>
-          <div class="p-5 pt-0 grid grid-cols-2 gap-2">
-            <button type="button" onclick="abrirPlayerFerramenta('${encodeURIComponent(JSON.stringify(item))}')" class="py-2.5 rounded-xl text-slate-700 bg-slate-100 hover:bg-slate-200 font-bold text-xs transition flex items-center justify-center gap-1.5 cursor-pointer">
-              <i data-lucide="eye" class="w-3.5 h-3.5"></i>
-              <span>Testar</span>
-            </button>
-            <button type="button" onclick="abrirModalMatriculas('${item.id}')" class="py-2.5 rounded-xl text-white font-bold text-xs shadow-md transition flex items-center justify-center gap-1.5 cursor-pointer" style="background-color: var(--btn-color);">
-              <i data-lucide="users" class="w-3.5 h-3.5"></i>
-              <span>Alunos</span>
-            </button>
-          </div>
+          ${botoesAcaoHtml}
         `;
         grid.appendChild(card);
       });
@@ -1750,7 +1762,6 @@
       renderizarCardsMateriais(filtrados);
     }
 
-    /* ==================== [CONSULTAR CURSOS POR ALUNO] ==================== */
     function consultarCursosDoAlunoEspecifico() {
       const termo = document.getElementById('filtroConsultaPorAluno').value.toLowerCase().trim();
       const badge = document.getElementById('badgeResultadoAlunoCursos');
@@ -1819,13 +1830,17 @@
       badge.className = 'text-[11px] font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full';
     }
 
-    /* ==================== [FIREBASE: CADASTRAR NOVO MATERIAL/CURSO] ==================== */
     function abrirModalCadastrarMaterial() {
+      if (!ehAdminMaster) {
+        alert('Apenas o Admin Master possui permissão para cadastrar novos cursos e ferramentas.');
+        return;
+      }
       const m = document.getElementById('modalCadastrarMaterial');
       m.classList.remove('hidden');
       setTimeout(() => { m.classList.remove('opacity-0'); m.querySelector('div').classList.remove('scale-95'); }, 10);
       lucide.createIcons();
     }
+
     function fecharModalCadastrarMaterial() {
       const m = document.getElementById('modalCadastrarMaterial');
       m.classList.add('opacity-0'); m.querySelector('div').classList.add('scale-95');
@@ -1834,6 +1849,10 @@
 
     async function salvarNovoMaterial(e) {
       e.preventDefault();
+      if (!ehAdminMaster) {
+        alert('Apenas o Admin Master pode executar esta ação.');
+        return;
+      }
       const btn = document.getElementById('btnSalvarMaterial');
       btn.innerText = 'Salvando no Firebase...'; btn.disabled = true;
 
@@ -1843,6 +1862,7 @@
       const capa = document.getElementById('matCapa').value.trim();
       const url = document.getElementById('matUrl').value.trim();
       const acesso = document.getElementById('matAcessoInicial').value;
+      const acessoInst = document.getElementById('matAcessoInstrutoresInicial').value;
 
       try {
         await db.collection("cursos_ead").add({
@@ -1852,6 +1872,7 @@
           capa: capa,
           url: url,
           destinadoA: acesso === 'todos' ? 'todos' : [],
+          destinadoInstrutores: acessoInst === 'todos' ? 'todos' : [],
           criadoPor: usuarioLogado.nome,
           criadoEm: firebase.firestore.FieldValue.serverTimestamp()
         });
@@ -1867,17 +1888,160 @@
       }
     }
 
+    /* ==================== [FUNCIONALIDADE: CADASTRAR INSTRUTOR NO CURSO] ==================== */
+    async function abrirModalLiberarParaInstrutoresDireto(idCurso) {
+      if (!ehAdminMaster) {
+        alert('Apenas o Admin Master pode gerenciar a liberação para instrutores.');
+        return;
+      }
+
+      const curso = todosMateriaisInstrutor.find(c => c.id === idCurso);
+      if (!curso) return;
+
+      document.getElementById('matDocIdCursoInstrutor').value = idCurso;
+      document.getElementById('matInstCursoTituloSub').innerText = `Curso: ${curso.titulo}`;
+      document.getElementById('filtroInstrutorNoModal').value = '';
+
+      if (todosInstrutoresCadastrados.length === 0) {
+        const snap = await db.collection("usuarios").where("tipo", "in", ["instrutor", "admin"]).get();
+        todosInstrutoresCadastrados = [];
+        snap.forEach(d => {
+          const inst = d.data();
+          inst.id = d.id;
+          todosInstrutoresCadastrados.push(inst);
+        });
+      }
+
+      const ehAbertoTodos = (!curso.destinadoInstrutores || curso.destinadoInstrutores === 'todos' || curso.destinadoInstrutores === '');
+      const chkTodos = document.getElementById('chkTodosInstrutores');
+      chkTodos.checked = ehAbertoTodos;
+
+      let matriculados = [];
+      if (Array.isArray(curso.destinadoInstrutores)) {
+        matriculados = curso.destinadoInstrutores;
+      } else if (typeof curso.destinadoInstrutores === 'string' && !ehAbertoTodos) {
+        matriculados = [curso.destinadoInstrutores];
+      }
+
+      mapaSelecaoTemporariaInstrutores = {};
+      todosInstrutoresCadastrados.forEach(inst => {
+        mapaSelecaoTemporariaInstrutores[inst.cpf] = ehAbertoTodos || matriculados.includes(inst.cpf) || matriculados.includes(inst.nome);
+      });
+
+      renderizarListaInstrutoresCheckboxes(todosInstrutoresCadastrados, ehAbertoTodos);
+
+      const m = document.getElementById('modalMatriculasInstrutores');
+      m.classList.remove('hidden');
+      setTimeout(() => { m.classList.remove('opacity-0'); m.querySelector('div').classList.remove('scale-95'); }, 10);
+      lucide.createIcons();
+    }
+
+    function fecharModalLiberarParaInstrutores() {
+      const m = document.getElementById('modalMatriculasInstrutores');
+      m.classList.add('opacity-0'); m.querySelector('div').classList.add('scale-95');
+      setTimeout(() => m.classList.add('hidden'), 200);
+    }
+
+    function renderizarListaInstrutoresCheckboxes(lista, desabilitados) {
+      const listaDiv = document.getElementById('listaInstrutoresCheckboxes');
+      const badgeCont = document.getElementById('contagemInstrutoresFiltrados');
+      listaDiv.innerHTML = '';
+      badgeCont.innerText = `${lista.length} de ${todosInstrutoresCadastrados.length} instrutores`;
+
+      if (lista.length === 0) {
+        listaDiv.innerHTML = '<div class="p-3 text-center text-xs text-slate-400">Nenhum instrutor localizado.</div>';
+        return;
+      }
+
+      lista.forEach(inst => {
+        const marcado = mapaSelecaoTemporariaInstrutores[inst.cpf] || false;
+        const row = document.createElement('div');
+        row.className = 'flex items-center justify-between p-2 rounded-lg hover:bg-slate-50 transition';
+        row.innerHTML = `
+          <div class="flex items-center gap-2.5 overflow-hidden">
+            <input type="checkbox" value="${inst.cpf}" ${marcado ? 'checked' : ''} ${desabilitados ? 'disabled' : ''} onchange="atualizarSelecaoInstrutor('${inst.cpf}', this.checked)" class="chk-inst-item w-4 h-4 text-teal-600 rounded cursor-pointer">
+            <div class="truncate">
+              <div class="text-xs font-bold text-slate-800 truncate">${inst.nome}</div>
+              <div class="text-[10px] text-slate-400 font-semibold">${inst.cpf} ${inst.adminMaster ? '(Admin Master)' : ''}</div>
+            </div>
+          </div>
+          <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2 py-0.5 rounded-md flex-shrink-0">Instrutor</span>
+        `;
+        listaDiv.appendChild(row);
+      });
+    }
+
+    function filtrarInstrutoresNoModal() {
+      const termo = document.getElementById('filtroInstrutorNoModal').value.toLowerCase().trim();
+      const chkTodos = document.getElementById('chkTodosInstrutores').checked;
+      if (!termo) {
+        renderizarListaInstrutoresCheckboxes(todosInstrutoresCadastrados, chkTodos);
+        return;
+      }
+      const filtrados = todosInstrutoresCadastrados.filter(i => 
+        (i.nome && i.nome.toLowerCase().includes(termo)) ||
+        (i.cpf && i.cpf.toLowerCase().includes(termo))
+      );
+      renderizarListaInstrutoresCheckboxes(filtrados, chkTodos);
+    }
+
+    function atualizarSelecaoInstrutor(cpf, valor) {
+      mapaSelecaoTemporariaInstrutores[cpf] = valor;
+    }
+
+    function alternarMarcarTodosInstrutores(marcado) {
+      todosInstrutoresCadastrados.forEach(i => {
+        mapaSelecaoTemporariaInstrutores[i.cpf] = marcado;
+      });
+      filtrarInstrutoresNoModal();
+    }
+
+    async function salvarLiberacaoInstrutoresNoFirebase() {
+      const idCurso = document.getElementById('matDocIdCursoInstrutor').value;
+      const chkTodos = document.getElementById('chkTodosInstrutores').checked;
+      const btn = document.getElementById('btnSalvarMatriculasInstrutores');
+      btn.innerText = 'Gravando liberação...'; btn.disabled = true;
+
+      try {
+        let novoDestinado;
+        if (chkTodos) {
+          novoDestinado = 'todos';
+        } else {
+          const selecionados = [];
+          Object.keys(mapaSelecaoTemporariaInstrutores).forEach(cpf => {
+            if (mapaSelecaoTemporariaInstrutores[cpf] === true) {
+              selecionados.push(cpf);
+            }
+          });
+          novoDestinado = selecionados;
+        }
+
+        await db.collection("cursos_ead").doc(idCurso).update({
+          destinadoInstrutores: novoDestinado,
+          atualizadoEm: firebase.firestore.FieldValue.serverTimestamp()
+        });
+
+        alert('Instrutores atualizados com sucesso no curso!');
+        fecharModalLiberarParaInstrutores();
+        carregarMateriaisEducacionaisInstrutor();
+      } catch (err) {
+        alert('Erro ao salvar liberação de instrutores: ' + err.message);
+      } finally {
+        btn.innerText = 'Salvar Liberação'; btn.disabled = false;
+      }
+    }
+
     /* ==================== [CRIAR AVALIAÇÃO PRÁTICA COM CRITÉRIOS] ==================== */
     function abrirModalCriarAvaliacao() {
       const container = document.getElementById('containerListaCriteriosNovos');
       container.innerHTML = '';
       
-      const黑criteriosIniciais = [
+      const criteriosIniciais = [
         "Uso correto dos pedais, embreagem e ponto de tração",
         "Atenção à sinalização, preferência e cruzamentos",
         "Alinhamento, baliza entre balizas e uso de retrovisores"
       ];
-      黑criteriosIniciais.forEach(crit => adicionarLinhaCriterioNovaAvaliacao(crit));
+      criteriosIniciais.forEach(crit => adicionarLinhaCriterioNovaAvaliacao(crit));
 
       document.getElementById('novaAvNomeModelo').value = '';
       const m = document.getElementById('modalCriarAvaliacao');
@@ -1966,7 +2130,7 @@
       }
     }
 
-    /* ==================== [GERENCIAR MATRÍCULAS COM BUSCA] ==================== */
+    /* ==================== [GERENCIAR MATRÍCULAS DE ALUNOS COM BUSCA] ==================== */
     function abrirModalMatriculas(idCurso) {
       materialSelecionadoParaMatricula = todosMateriaisInstrutor.find(m => m.id === idCurso);
       if (!materialSelecionadoParaMatricula) return;
@@ -2108,7 +2272,6 @@
       document.getElementById('gridFerramentasCards').classList.remove('hidden');
     }
 
-    /* ==================== [FIREBASE: CADASTRAR NOVO ALUNO] ==================== */
     async function salvarNovoAlunoPeloInstrutor(e) {
       e.preventDefault();
       const btn = document.getElementById('btnSalvarAluno');
@@ -2143,7 +2306,6 @@
       }
     }
 
-    /* ==================== [FIREBASE: MODAL DINÂMICO DO INSTRUTOR] ==================== */
     async function abrirModalSaibaMais() {
       const modal = document.getElementById('modalSaibaMaisInstrutor');
       const nomeInst = usuarioLogado ? (usuarioLogado.instrutor || usuarioLogado.nome || 'Amauri de Souza') : 'Amauri de Souza';
@@ -2193,7 +2355,6 @@
       setTimeout(() => modal.classList.add('hidden'), 200);
     }
 
-    /* ==================== [PWA: BANNER E INSTALAÇÃO DIRETA] ==================== */
     function verificarExibicaoBannerPWA() {
       const jaEstaInstalado = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
       if (jaEstaInstalado) return;
